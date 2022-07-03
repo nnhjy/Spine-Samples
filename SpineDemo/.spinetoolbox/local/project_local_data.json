@@ -1,0 +1,28 @@
+{
+    "items": {
+        "SpineOpt reserve demo DB": {
+            "url": {
+                "username": "",
+                "password": ""
+            }
+        },
+        "Output DB": {
+            "url": {
+                "username": "",
+                "password": ""
+            }
+        },
+        "SpineFormatDB 1": {
+            "url": {
+                "username": "",
+                "password": ""
+            }
+        },
+        "SpineFormatDB 2": {
+            "url": {
+                "username": "",
+                "password": ""
+            }
+        }
+    }
+}

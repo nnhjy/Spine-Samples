@@ -1,0 +1,110 @@
+{
+    "project": {
+        "version": 7,
+        "name": "Hydro Reservoir Example",
+        "description": "",
+        "specifications": {},
+        "connections": [
+            {
+                "name": "from Load template 1 to Data Store 1",
+                "from": [
+                    "Load template 1",
+                    "right"
+                ],
+                "to": [
+                    "Data Store 1",
+                    "left"
+                ]
+            },
+            {
+                "name": "from Data Store 1 to Run SpineOpt 1",
+                "from": [
+                    "Data Store 1",
+                    "right"
+                ],
+                "to": [
+                    "Run SpineOpt 1",
+                    "left"
+                ]
+            },
+            {
+                "name": "from Run SpineOpt 1 to Data Store 2",
+                "from": [
+                    "Run SpineOpt 1",
+                    "right"
+                ],
+                "to": [
+                    "Data Store 2",
+                    "left"
+                ]
+            }
+        ],
+        "jumps": []
+    },
+    "items": {
+        "Data Store 1": {
+            "type": "Data Store",
+            "description": "",
+            "x": -1337.2306733889664,
+            "y": -402.6717083912842,
+            "url": {
+                "dialect": "sqlite",
+                "host": "",
+                "port": "",
+                "database": {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/items/data_store_1/Data Store 1.sqlite"
+                }
+            }
+        },
+        "Load template 1": {
+            "type": "Tool",
+            "description": "",
+            "x": -1549.5849076649667,
+            "y": -400.9749518139358,
+            "specification": "Load template",
+            "execute_in_work": true,
+            "cmd_line_args": [
+                {
+                    "type": "resource",
+                    "arg": "db_url@Data Store 1"
+                }
+            ]
+        },
+        "Run SpineOpt 1": {
+            "type": "Tool",
+            "description": "",
+            "x": -1117.9893612117028,
+            "y": -400.94108075975265,
+            "specification": "Run SpineOpt",
+            "execute_in_work": true,
+            "cmd_line_args": [
+                {
+                    "type": "resource",
+                    "arg": "db_url@Data Store 1"
+                },
+                {
+                    "type": "resource",
+                    "arg": "db_url@Data Store 2"
+                }
+            ]
+        },
+        "Data Store 2": {
+            "type": "Data Store",
+            "description": "",
+            "x": -887.7259697426261,
+            "y": -401.95100791531877,
+            "url": {
+                "dialect": "sqlite",
+                "host": "",
+                "port": "",
+                "database": {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/items/data_store_2/Data Store 2.sqlite"
+                }
+            }
+        }
+    }
+}

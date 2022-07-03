@@ -1,0 +1,19 @@
+{
+    "items": {
+        "Data Connection test": {
+            "db_credentials": {}
+        },
+        "Data Store test 1": {
+            "url": {
+                "username": "",
+                "password": ""
+            }
+        },
+        "Data Store test 2": {
+            "url": {
+                "username": "",
+                "password": ""
+            }
+        }
+    }
+}

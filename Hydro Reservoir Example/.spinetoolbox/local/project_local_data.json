@@ -1,0 +1,16 @@
+{
+    "items": {
+        "Data Store 1": {
+            "url": {
+                "username": "",
+                "password": ""
+            }
+        },
+        "Data Store 2": {
+            "url": {
+                "username": "",
+                "password": ""
+            }
+        }
+    }
+}

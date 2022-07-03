@@ -1,0 +1,220 @@
+{
+    "project": {
+        "version": 7,
+        "name": "SpineDemo",
+        "description": "A demonstration on Spine toolkits.",
+        "specifications": {
+            "Tool": [
+                {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/specifications/Tool/test_spineopt.json"
+                },
+                {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/specifications/Tool/spine_julia_model.json"
+                },
+                {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/specifications/Tool/spine_julia_model_2.json"
+                }
+            ]
+        },
+        "connections": [
+            {
+                "name": "from SpineFormatDB 1 to SpineFormat Julia JuMP Model 1",
+                "from": [
+                    "SpineFormatDB 1",
+                    "right"
+                ],
+                "to": [
+                    "SpineFormat Julia JuMP Model 1",
+                    "left"
+                ]
+            },
+            {
+                "name": "from SpineOpt reserve demo DB to Customised run SpineOpt",
+                "from": [
+                    "SpineOpt reserve demo DB",
+                    "right"
+                ],
+                "to": [
+                    "Customised run SpineOpt",
+                    "left"
+                ],
+                "resource_filters": {
+                    "db_url@SpineOpt reserve demo DB": {
+                        "scenario_filter": [
+                            7
+                        ],
+                        "tool_filter": [
+                            1
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "from Customised run SpineOpt to Output DB",
+                "from": [
+                    "Customised run SpineOpt",
+                    "right"
+                ],
+                "to": [
+                    "Output DB",
+                    "left"
+                ]
+            },
+            {
+                "name": "from Load SpineOpt template to SpineOpt reserve demo DB",
+                "from": [
+                    "Load SpineOpt template",
+                    "right"
+                ],
+                "to": [
+                    "SpineOpt reserve demo DB",
+                    "left"
+                ]
+            },
+            {
+                "name": "from SpineFormatDB 2 to SpineFormat Julia JuMP Model 2",
+                "from": [
+                    "SpineFormatDB 2",
+                    "right"
+                ],
+                "to": [
+                    "SpineFormat Julia JuMP Model 2",
+                    "left"
+                ]
+            }
+        ],
+        "jumps": []
+    },
+    "items": {
+        "Load SpineOpt template": {
+            "type": "Tool",
+            "description": "",
+            "x": -437.0276900380326,
+            "y": 130.04766331082976,
+            "specification": "Load template",
+            "execute_in_work": true,
+            "cmd_line_args": [
+                {
+                    "type": "resource",
+                    "arg": "db_url@SpineOpt reserve demo DB"
+                }
+            ]
+        },
+        "SpineOpt reserve demo DB": {
+            "type": "Data Store",
+            "description": "",
+            "x": -246.94048645002323,
+            "y": 121.32647284608915,
+            "url": {
+                "dialect": "sqlite",
+                "host": "",
+                "port": "",
+                "database": {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/items/spineopt_reserve_demo_db/data_store_reserve.sqlite"
+                }
+            }
+        },
+        "Customised run SpineOpt": {
+            "type": "Tool",
+            "description": "",
+            "x": -34.484449199992056,
+            "y": 126.34569006721722,
+            "specification": "Customised_run_SpineOpt",
+            "execute_in_work": false,
+            "cmd_line_args": [
+                {
+                    "type": "resource",
+                    "arg": "db_url@SpineOpt reserve demo DB"
+                },
+                {
+                    "type": "resource",
+                    "arg": "db_url@Output DB"
+                }
+            ]
+        },
+        "Output DB": {
+            "type": "Data Store",
+            "description": "",
+            "x": 139.74765954024718,
+            "y": 127.3546114295796,
+            "url": {
+                "dialect": "sqlite",
+                "host": "",
+                "port": "",
+                "database": {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/items/output_db/test_output.sqlite"
+                }
+            }
+        },
+        "SpineFormatDB 1": {
+            "type": "Data Store",
+            "description": "",
+            "x": -441.6570821364565,
+            "y": -15.991346154963978,
+            "url": {
+                "dialect": "sqlite",
+                "host": "",
+                "port": "",
+                "database": {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/items/spineformatdb_1/Data Store 1.sqlite"
+                }
+            }
+        },
+        "SpineFormatDB 2": {
+            "type": "Data Store",
+            "description": "",
+            "x": -448.2968891787293,
+            "y": -166.2224420550345,
+            "url": {
+                "dialect": "sqlite",
+                "host": "",
+                "port": "",
+                "database": {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/items/spineformatdb_2/Data Store.sqlite"
+                }
+            }
+        },
+        "SpineFormat Julia JuMP Model 2": {
+            "type": "Tool",
+            "description": "",
+            "x": -243.31664979065812,
+            "y": -170.62453864988058,
+            "specification": "Spine_julia_model_2",
+            "execute_in_work": false,
+            "cmd_line_args": [
+                {
+                    "type": "resource",
+                    "arg": "db_url@SpineFormatDB 2"
+                }
+            ]
+        },
+        "SpineFormat Julia JuMP Model 1": {
+            "type": "Tool",
+            "description": "",
+            "x": -256.22497735561194,
+            "y": -18.032217142489372,
+            "specification": "Spine_julia_model_1",
+            "execute_in_work": false,
+            "cmd_line_args": [
+                {
+                    "type": "resource",
+                    "arg": "db_url@SpineFormatDB 1"
+                }
+            ]
+        }
+    }
+}

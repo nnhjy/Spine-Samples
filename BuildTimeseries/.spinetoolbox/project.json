@@ -1,0 +1,181 @@
+{
+    "project": {
+        "version": 7,
+        "name": "BuildTimeseries",
+        "description": "A workflow to build timeseries parameter value from a list of non-indexed values",
+        "specifications": {
+            "Importer": [
+                {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/specifications/Importer/import_timeseries.json"
+                },
+                {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/specifications/Importer/timeseries_wo_index.json"
+                }
+            ],
+            "Exporter": [
+                {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/specifications/Exporter/add_index.json"
+                }
+            ]
+        },
+        "connections": [
+            {
+                "name": "from Data Connection test to Importer test",
+                "from": [
+                    "Data Connection test",
+                    "right"
+                ],
+                "to": [
+                    "Importer test",
+                    "left"
+                ]
+            },
+            {
+                "name": "from Importer test to Data Store test 1",
+                "from": [
+                    "Importer test",
+                    "right"
+                ],
+                "to": [
+                    "Data Store test 1",
+                    "left"
+                ]
+            },
+            {
+                "name": "from Data Store test 1 to Exporter with index",
+                "from": [
+                    "Data Store test 1",
+                    "right"
+                ],
+                "to": [
+                    "Exporter with index",
+                    "left"
+                ]
+            },
+            {
+                "name": "from Exporter with index to Importer timeseries",
+                "from": [
+                    "Exporter with index",
+                    "right"
+                ],
+                "to": [
+                    "Importer timeseries",
+                    "left"
+                ]
+            },
+            {
+                "name": "from Importer timeseries to Data Store test 2",
+                "from": [
+                    "Importer timeseries",
+                    "right"
+                ],
+                "to": [
+                    "Data Store test 2",
+                    "left"
+                ]
+            }
+        ],
+        "jumps": []
+    },
+    "items": {
+        "Data Connection test": {
+            "type": "Data Connection",
+            "description": "",
+            "x": -307.7910734692297,
+            "y": -224.30525942365432,
+            "file_references": [
+                {
+                    "type": "path",
+                    "relative": true,
+                    "path": "1.csv"
+                }
+            ],
+            "db_references": []
+        },
+        "Importer test": {
+            "type": "Importer",
+            "description": "",
+            "x": -174.0126003600547,
+            "y": -224.30525942365426,
+            "specification": "timeseries_wo_index",
+            "cancel_on_error": false,
+            "purge_before_writing": true,
+            "on_conflict": "replace",
+            "file_selection": [
+                [
+                    "<project>/1.csv",
+                    true
+                ]
+            ]
+        },
+        "Data Store test 1": {
+            "type": "Data Store",
+            "description": "",
+            "x": -41.23998043215169,
+            "y": -227.32281896747028,
+            "url": {
+                "dialect": "sqlite",
+                "host": "",
+                "port": "",
+                "database": {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/items/data_store_test_1/test_1.sqlite"
+                }
+            }
+        },
+        "Data Store test 2": {
+            "type": "Data Store",
+            "description": "",
+            "x": 398.0914614787955,
+            "y": -230.3919127179877,
+            "url": {
+                "dialect": "sqlite",
+                "host": "",
+                "port": "",
+                "database": {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/items/data_store_test_2/test_2.sqlite"
+                }
+            }
+        },
+        "Exporter with index": {
+            "type": "Exporter",
+            "description": "",
+            "x": 99.20490579674728,
+            "y": -233.84013509233293,
+            "output_time_stamps": false,
+            "cancel_on_error": true,
+            "output_labels": [
+                {
+                    "in_label": "db_url@Data Store test 1",
+                    "out_label": "temp.xlsx"
+                }
+            ],
+            "specification": "add_index"
+        },
+        "Importer timeseries": {
+            "type": "Importer",
+            "description": "",
+            "x": 249.02081233548734,
+            "y": -232.8278401352232,
+            "specification": "import_timeseries",
+            "cancel_on_error": false,
+            "purge_before_writing": true,
+            "on_conflict": "replace",
+            "file_selection": [
+                [
+                    "temp.xlsx",
+                    true
+                ]
+            ]
+        }
+    }
+}
