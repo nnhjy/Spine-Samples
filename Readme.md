@@ -1,3 +1,5 @@
+# Set up work environment for Spine toolkits
+
 ## Python (virtual) environment setup
 1. Download and install python interpreter
 2. Create a virtual environment: "`X:\path\to\python\interpreter -m venv Y:\path\to\virtual_env_folder`"
