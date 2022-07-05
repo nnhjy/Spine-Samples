@@ -1,12 +1,14 @@
 .idea/
 .vscode/
-log/
+# log/
 logs/
 *.log
 output/
 *.bak
+.spinetoolbox/items/
+.spinetoolbox/local/
 # items/
-# *.sqlite
+*.sqlite
 # *.csv
 # *.gdx
 # project.json
