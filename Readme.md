@@ -27,7 +27,7 @@ When the ipython and ipykernel (maybe only ipykernel needed) packages are instal
 		- If necessary, set `ENV["PYTHON"]=""` after "using Pkg"
 		- `Pkg.build("PyCall")`
 	- Check which python the PyCall is using: `PyCall.pyprogramname`
-	- Add spinedb_api to the base python interpreter on which the virtual env is built 
+	- Add spinedb_api to **the base python interpreter** on which the virtual env is built 
 		- Run (with ipython and ipykernel installed) `pip install -e path/to/local/spinedb_api `
 		- Otherwise, `X:\path\to\python\folder\Scripts\pip.exe install -e path/to/local/spinedb_api`
 	- Build customised python interpreter: 
