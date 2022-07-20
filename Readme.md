@@ -2,7 +2,7 @@
 
 ## Python (virtual) environment setup
 1. Download and install python interpreter
-2. Create a virtual environment: "`X:\path\to\python\interpreter -m venv Y:\path\to\virtual_env_folder`"
+2. Create a virtual environment: "`X:\path\to\python\interpretor -m venv Y:\path\to\virtual_env_folder`"
 3. In the Terminal, switch to the corresponding virtual environment
 	- Run "`deactivate`" to exit current virenv
 	- Run "`cd path\to\the\virenv\folder`"
