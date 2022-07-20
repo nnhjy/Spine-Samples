@@ -14,9 +14,12 @@ When the ipython and ipykernel (maybe only ipykernel needed) packages are instal
 ## Julia environment setup
 1. Install julia
 2. Modify the environment variable "julia" to the latest Julia installed
-	- System environment variable: Control Panel\All Control Panel Items\System --> Advanced system settings --> Advanced --> Environmental Variables --> Path
-    - User environment variable (this is the needed): Search "environment variable" in Windows task bar --> "Edit environment variable for your account"
-    - Rewrite "C:\HJY_tool\Julia\Julia-x.x.x\bin\julia.exe" to the old
+	- System environment variable (if you install Julia for all users):
+	"Control Panel\All Control Panel Items\System --> Advanced system settings --> Advanced --> Environmental Variables --> Edit in `Path`" 
+	    - under "User variables for `administrator_username`" only for the administrator, under "System variables" for all users)
+	- User environment variable (if you install Julia for the current user): 
+	Search `environment variables` in the Windows taskbar --> "Edit environment variable for your account" --> Edit in `Path` under "User variables for `the_current_username`"
+	- **Edit in `Path`**: Click `New` to add `X:\directory\to\Julia-x.x.x\bin` and delete the directory for old versions
     - In case the Jupyter notebook kernel needs updating, do: Pkg.update(); Pkg.build("IJulia")
 	- Renew the path of julia executable in VSCode
 		- Settings --> Search "julia" --> Julia: Environment Path / Julia: Executable Path
