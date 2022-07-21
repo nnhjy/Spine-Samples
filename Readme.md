@@ -24,19 +24,35 @@ When the ipython and ipykernel (maybe only ipykernel needed) packages are instal
 	- Renew the path of julia executable in VSCode
 		- Settings --> Search "julia" --> Julia: Environment Path / Julia: Executable Path
 3. Install Spine related jl package:
-	- pkg> dev "...path to SpineOpt folder...", pkg> dev "...path to SpineInterface folder"
-4. pkg>add PyCall ([PyCall documentation](https://github.com/JuliaPy/PyCall.jl))
-	- Build the julia-specific miniconda python env if it's missing: 
-		- If necessary, set `ENV["PYTHON"]=""` after "using Pkg"
-		- `Pkg.build("PyCall")`
-	- Check which python the PyCall is using: `PyCall.pyprogramname`
-	- Add spinedb_api to **the base python interpreter** on which the virtual env is built 
+	- pkg> dev "...path to SpineOpt folder...", pkg> dev "...path to SpineInterface folder..."
+4. Build `PyCall` environment
+Because `PyCall.jl` still doesn't work well with virtual environments on Windows machine (see [PyCall documentation](https://github.com/JuliaPy/PyCall.jl) documentation), `spinedb_api` must be installed on a concrete python interpreter.
+	- pkg>add PyCall
+	- ***Option 1*** Install `spinedb_api` to the default conda python interpreter of Julia.
+		- Confirm the default conda python is linked: 
+		```julia
+		julia> ENV["PYTHON"]=""
+		julia> using PyCall
+		julia> using Pkg
+		julia> Pkg.build("PyCall")
+		```
+		- [Find the conda python](https://github.com/nnhjy/julia-introduction#manage-julia-conda-environment)
+		- "X:\path\to\the\conda\python\folder\Scripts\pip.exe install -e path/to/local/spinedb_api"
+	
+	- ***Option 2*** Install `spinedb_api` to **the parent python interpreter** on which the virtual env is built 
 		- Run (with ipython and ipykernel installed) `pip install -e path/to/local/spinedb_api `
 		- Otherwise, `X:\path\to\python\folder\Scripts\pip.exe install -e path/to/local/spinedb_api`
 	- Build customised python interpreter: 
 		- julia>`using Pkg`
-		- julia>`ENV["PYTHON"] = raw"C:\path\to\python.exe" `
+		- julia>`ENV["PYTHON"] = raw"C:\path\to\the\parent\python.exe" `
 		- julia>`Pkg.build("PyCall")`
 		- Re-launch julia
-	- https://github.com/JuliaPy/PyCall.jl/issues/706
+	- Check which python the PyCall is using: `PyCall.pyprogramname` or `PyCall.python`
+	- Check packages that are available for the PyCall used python: 
+	```julia
+	julia> using PyCall
+	julia> pyimport("sys").path
+	```
+	When `spinedb_api` package is in the list, it is good to go.
+	- See the [PyCall issue with virtual environment](https://github.com/JuliaPy/PyCall.jl/issues/706)
 	- See also the [virtual environment management guide of PyCall](https://github.com/JuliaPy/PyCall.jl#python-virtual-environments)
