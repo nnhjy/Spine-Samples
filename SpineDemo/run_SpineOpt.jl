@@ -26,6 +26,28 @@ output_db_url = ARGS[2]
     m = run_spineopt(input_db_url, output_db_url)
 end
 
+# Run SpineOpt with different solver settings
+
+# using CPLEX
+# using JuMP
+
+# run_spineopt(
+# ARGS...,
+# mip_solver=optimizer_with_attributes(CPLEX.Optimizer, "CPX_PARAM_EPGAP" => 0.01),
+# lp_solver=optimizer_with_attributes(CPLEX.Optimizer)
+# )
+
+#####################
+### The above uses the CPLEX solver. Other solvers follow a similar form.
+#####################
+
+# using SpineOpt
+# run_spineopt(ARGS...)
+
+#####################
+### The above uses the default solvers which are currently CLP for LP problems and Cbc for MIP problems.
+#####################
+
 # Show active variables and constraints
 println("*** Active constraints: ***")
 for key in keys(m.ext[:spineopt].constraints)
