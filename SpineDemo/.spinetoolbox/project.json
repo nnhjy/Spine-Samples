@@ -1,6 +1,6 @@
 {
     "project": {
-        "version": 7,
+        "version": 8,
         "name": "SpineDemo",
         "description": "A demonstration on Spine toolkits.",
         "specifications": {
@@ -43,17 +43,7 @@
                 "to": [
                     "Customised run SpineOpt",
                     "left"
-                ],
-                "resource_filters": {
-                    "db_url@SpineOpt reserve demo DB": {
-                        "scenario_filter": [
-                            7
-                        ],
-                        "tool_filter": [
-                            1
-                        ]
-                    }
-                }
+                ]
             },
             {
                 "name": "from Customised run SpineOpt to Output DB",
@@ -98,7 +88,7 @@
             "x": -437.0276900380326,
             "y": 130.04766331082976,
             "specification": "Load template",
-            "execute_in_work": true,
+            "execute_in_work": false,
             "cmd_line_args": [
                 {
                     "type": "resource",
@@ -109,8 +99,8 @@
         "SpineOpt reserve demo DB": {
             "type": "Data Store",
             "description": "",
-            "x": -246.94048645002323,
-            "y": 121.32647284608915,
+            "x": -249.97770584923452,
+            "y": 129.42572457731924,
             "url": {
                 "dialect": "sqlite",
                 "host": "",
@@ -126,9 +116,9 @@
             "type": "Tool",
             "description": "",
             "x": -34.484449199992056,
-            "y": 126.34569006721722,
+            "y": 128.37050300002474,
             "specification": "Customised_run_SpineOpt",
-            "execute_in_work": false,
+            "execute_in_work": true,
             "cmd_line_args": [
                 {
                     "type": "resource",
@@ -143,8 +133,8 @@
         "Output DB": {
             "type": "Data Store",
             "description": "",
-            "x": 139.74765954024718,
-            "y": 127.3546114295796,
+            "x": 137.72284660743964,
+            "y": 128.36701789598337,
             "url": {
                 "dialect": "sqlite",
                 "host": "",
@@ -191,8 +181,8 @@
         "SpineFormat Julia JuMP Model 2": {
             "type": "Tool",
             "description": "",
-            "x": -243.31664979065812,
-            "y": -170.62453864988058,
+            "x": -243.3166497906581,
+            "y": -165.5625063178618,
             "specification": "Spine_julia_model_2",
             "execute_in_work": false,
             "cmd_line_args": [
@@ -205,8 +195,8 @@
         "SpineFormat Julia JuMP Model 1": {
             "type": "Tool",
             "description": "",
-            "x": -256.22497735561194,
-            "y": -18.032217142489372,
+            "x": -248.12572562438186,
+            "y": -16.007404209681845,
             "specification": "Spine_julia_model_1",
             "execute_in_work": false,
             "cmd_line_args": [
