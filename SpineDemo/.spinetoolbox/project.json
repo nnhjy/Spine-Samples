@@ -184,7 +184,7 @@
             "x": -243.3166497906581,
             "y": -165.5625063178618,
             "specification": "Spine_julia_model_2",
-            "execute_in_work": false,
+            "execute_in_work": true,
             "cmd_line_args": [
                 {
                     "type": "resource",
@@ -198,7 +198,7 @@
             "x": -248.12572562438186,
             "y": -16.007404209681845,
             "specification": "Spine_julia_model_1",
-            "execute_in_work": false,
+            "execute_in_work": true,
             "cmd_line_args": [
                 {
                     "type": "resource",
