@@ -1,16 +1,16 @@
 #=
-run_spineopt_test:
+run_spineopt_sample_script:
 - Julia version: 
 - Author: jhjiang
-- Date: 2020-10-01
+- Date: 2022-10-13
 =#
-# syntax to run this script
 
 using SpineOpt
 # using IJulia
 
 # command to run this script from a Julia console
-# include("..\\spine\\Case_study_B3\\spine-cs-b3\\run_SpineOpt.jl")
+# include("path\\to\\run_SpineOpt.jl")
+# e.g. include("..\\spine\\Case_study_B3\\spine-cs-b3\\run_SpineOpt.jl")
 
 # if isdefined(Main, :IJulia) && Main.IJulia.inited
 #     Main.IJulia.stdio_bytes[] = 0
@@ -23,7 +23,7 @@ output_db_url = ARGS[2]
 # output_db_url = "sqlite:///$(@__DIR__)/toolbox_output_predefined/output_db.sqlite"
 
 @time begin
-    m = run_spineopt(input_db_url, output_db_url)
+    m = run_spineopt(input_db_url, output_db_url, ARGS[3:end]...)
 end
 
 # Run SpineOpt with different solver settings
@@ -49,11 +49,11 @@ end
 #####################
 
 # Show active variables and constraints
-println("*** Active constraints: ***")
-for key in keys(m.ext[:spineopt].constraints)
-    !isempty(m.ext[:spineopt].constraints[key]) && println(key)
-end
 println("*** Active variables: ***")
 for key in keys(m.ext[:spineopt].variables)
     !isempty(m.ext[:spineopt].variables[key]) && println(key)
+end
+println("*** Active constraints: ***")
+for key in keys(m.ext[:spineopt].constraints)
+    !isempty(m.ext[:spineopt].constraints[key]) && println(key)
 end

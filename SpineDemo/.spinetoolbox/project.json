@@ -35,20 +35,20 @@
                 ]
             },
             {
-                "name": "from SpineOpt reserve demo DB to Customised run SpineOpt",
+                "name": "from SpineOpt reserve demo DB to Run SpineOpt",
                 "from": [
                     "SpineOpt reserve demo DB",
                     "right"
                 ],
                 "to": [
-                    "Customised run SpineOpt",
+                    "Run SpineOpt",
                     "left"
                 ]
             },
             {
-                "name": "from Customised run SpineOpt to Output DB",
+                "name": "from Run SpineOpt to Output DB",
                 "from": [
-                    "Customised run SpineOpt",
+                    "Run SpineOpt",
                     "right"
                 ],
                 "to": [
@@ -112,24 +112,6 @@
                 }
             }
         },
-        "Customised run SpineOpt": {
-            "type": "Tool",
-            "description": "",
-            "x": -34.484449199992056,
-            "y": 128.37050300002474,
-            "specification": "Customised_run_SpineOpt",
-            "execute_in_work": true,
-            "cmd_line_args": [
-                {
-                    "type": "resource",
-                    "arg": "db_url@SpineOpt reserve demo DB"
-                },
-                {
-                    "type": "resource",
-                    "arg": "db_url@Output DB"
-                }
-            ]
-        },
         "Output DB": {
             "type": "Data Store",
             "description": "",
@@ -183,8 +165,8 @@
             "description": "",
             "x": -243.3166497906581,
             "y": -165.5625063178618,
-            "specification": "Spine_julia_model_2",
-            "execute_in_work": true,
+            "specification": "Spine_julia_model_1",
+            "execute_in_work": false,
             "cmd_line_args": [
                 {
                     "type": "resource",
@@ -203,6 +185,24 @@
                 {
                     "type": "resource",
                     "arg": "db_url@SpineFormatDB 1"
+                }
+            ]
+        },
+        "Run SpineOpt": {
+            "type": "Tool",
+            "description": "",
+            "x": -34.484449199992056,
+            "y": 128.37050300002474,
+            "specification": "Run SpineOpt customised detailed",
+            "execute_in_work": true,
+            "cmd_line_args": [
+                {
+                    "type": "resource",
+                    "arg": "db_url@SpineOpt reserve demo DB"
+                },
+                {
+                    "type": "resource",
+                    "arg": "db_url@Output DB"
                 }
             ]
         }

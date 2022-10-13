@@ -12294,7 +12294,7 @@
             "node",
             "node_A_reserve_spin_up",
             "demand",
-            100,
+            1000,
             "Base"
         ],
         [
@@ -12334,7 +12334,7 @@
             "block_start",
             {
                 "type": "date_time",
-                "data": "2000-01-01T00:00:00"
+                "data": "2000-01-02T00:00:00"
             },
             "investment"
         ],
@@ -12400,7 +12400,7 @@
             "unit",
             "UnitInvA",
             "unit_investment_cost",
-            100,
+            2000.0,
             "investment"
         ],
         [
@@ -12436,7 +12436,7 @@
                 "node_A_reserves"
             ],
             "fuel_cost",
-            10,
+            100.0,
             "investment"
         ],
         [
@@ -12446,7 +12446,7 @@
                 "node_A_reserves"
             ],
             "unit_capacity",
-            4000,
+            3000.0,
             "investment"
         ],
         [
@@ -12526,7 +12526,7 @@
                 "node_A_reserves"
             ],
             "unit_capacity",
-            15000,
+            12000.0,
             "Base"
         ]
     ],
