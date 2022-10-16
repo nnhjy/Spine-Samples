@@ -1,7 +1,7 @@
 #=
 run_spineopt_sample_script:
 - Julia version: 
-- Author: jhjiang
+- Author: Huang, Jiangyi
 - Date: 2022-10-13
 =#
 
@@ -31,11 +31,11 @@ end
 # using CPLEX
 # using JuMP
 
-# run_spineopt(
-# ARGS...,
-# mip_solver=optimizer_with_attributes(CPLEX.Optimizer, "CPX_PARAM_EPGAP" => 0.01),
-# lp_solver=optimizer_with_attributes(CPLEX.Optimizer)
-# )
+# m = run_spineopt(
+# 		ARGS...,
+# 		mip_solver=optimizer_with_attributes(CPLEX.Optimizer, "CPX_PARAM_EPGAP" => 0.01),
+# 		lp_solver=optimizer_with_attributes(CPLEX.Optimizer)
+# 	  )
 
 #####################
 ### The above uses the CPLEX solver. Other solvers follow a similar form.
