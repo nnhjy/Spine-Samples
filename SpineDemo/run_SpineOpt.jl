@@ -57,3 +57,7 @@ println("*** Active constraints: ***")
 for key in keys(m.ext[:spineopt].constraints)
     !isempty(m.ext[:spineopt].constraints[key]) && println(key)
 end
+println("*** Unlisted active values: ***")
+for key in setdiff(keys(m.ext[:spineopt].values), keys(m.ext[:spineopt].outputs))
+    !isempty(m.ext[:spineopt].values[key]) && println(key)
+end
