@@ -1,6 +1,6 @@
 {
     "project": {
-        "version": 7,
+        "version": 8,
         "name": "BuildTimeseries",
         "description": "A workflow to build timeseries parameter value from a list of non-indexed values",
         "specifications": {
@@ -45,7 +45,11 @@
                 "to": [
                     "Data Store test 1",
                     "left"
-                ]
+                ],
+                "options": {
+                    "purge_before_writing": true,
+                    "purge_settings": null
+                }
             },
             {
                 "name": "from Data Store test 1 to Exporter with index",
@@ -78,7 +82,11 @@
                 "to": [
                     "Data Store test 2",
                     "left"
-                ]
+                ],
+                "options": {
+                    "purge_before_writing": true,
+                    "purge_settings": null
+                }
             }
         ],
         "jumps": []
