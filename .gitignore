@@ -7,7 +7,7 @@ output/
 *.bak
 local/
 # items/
-*.sqlite
+# *.sqlite
 # *.csv
 # *.gdx
 # project.json
