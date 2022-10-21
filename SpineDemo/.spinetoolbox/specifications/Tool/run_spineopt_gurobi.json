@@ -1,10 +1,10 @@
 {
-    "name": "Run SpineOpt customised detailed",
+    "name": "Run_SpineOpt_Gurobi",
     "tooltype": "julia",
     "includes": [
-        "run_SpineOpt.jl"
+        "run_SpineOpt_Gurobi.jl"
     ],
-    "description": "",
+    "description": "Run SpineOpt using Gurobi solver",
     "inputfiles": [],
     "inputfiles_opt": [],
     "outputfiles": [],

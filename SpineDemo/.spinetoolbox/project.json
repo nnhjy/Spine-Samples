@@ -8,17 +8,22 @@
                 {
                     "type": "path",
                     "relative": true,
-                    "path": ".spinetoolbox/specifications/Tool/test_spineopt.json"
-                },
-                {
-                    "type": "path",
-                    "relative": true,
                     "path": ".spinetoolbox/specifications/Tool/spine_julia_model.json"
                 },
                 {
                     "type": "path",
                     "relative": true,
                     "path": ".spinetoolbox/specifications/Tool/spine_julia_model_2.json"
+                },
+                {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/specifications/Tool/run_spineopt_gurobi.json"
+                },
+                {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/specifications/Tool/run_spineopt_customised.json"
                 }
             ]
         },
@@ -35,20 +40,20 @@
                 ]
             },
             {
-                "name": "from SpineOpt reserve demo DB to Run SpineOpt",
+                "name": "from SpineOpt demo DB - operating reserves to Run SpineOpt - reserves demo",
                 "from": [
-                    "SpineOpt reserve demo DB",
+                    "SpineOpt demo DB - operating reserves",
                     "right"
                 ],
                 "to": [
-                    "Run SpineOpt",
+                    "Run SpineOpt - reserves demo",
                     "left"
                 ]
             },
             {
-                "name": "from Run SpineOpt to Output DB",
+                "name": "from Run SpineOpt - reserves demo to Output DB",
                 "from": [
-                    "Run SpineOpt",
+                    "Run SpineOpt - reserves demo",
                     "right"
                 ],
                 "to": [
@@ -57,13 +62,13 @@
                 ]
             },
             {
-                "name": "from Load SpineOpt template to SpineOpt reserve demo DB",
+                "name": "from Load SpineOpt template to SpineOpt demo DB - operating reserves",
                 "from": [
                     "Load SpineOpt template",
                     "right"
                 ],
                 "to": [
-                    "SpineOpt reserve demo DB",
+                    "SpineOpt demo DB - operating reserves",
                     "left"
                 ]
             },
@@ -77,6 +82,105 @@
                     "SpineFormat Julia JuMP Model 2",
                     "left"
                 ]
+            },
+            {
+                "name": "from Load SpineOpt template to SpineOpt demo DB - simple reserves",
+                "from": [
+                    "Load SpineOpt template",
+                    "right"
+                ],
+                "to": [
+                    "SpineOpt demo DB - simple reserves",
+                    "left"
+                ]
+            },
+            {
+                "name": "from Load SpineOpt template to SpineOpt demo DB - rolling horizon",
+                "from": [
+                    "Load SpineOpt template",
+                    "bottom"
+                ],
+                "to": [
+                    "SpineOpt demo DB - rolling horizon",
+                    "left"
+                ]
+            },
+            {
+                "name": "from Load SpineOpt template to SpineOpt demo DB - unit investment",
+                "from": [
+                    "Load SpineOpt template",
+                    "bottom"
+                ],
+                "to": [
+                    "SpineOpt demo DB - unit investment",
+                    "left"
+                ]
+            },
+            {
+                "name": "from SpineOpt demo DB - simple reserves to Run SpineOpt - simple reserves",
+                "from": [
+                    "SpineOpt demo DB - simple reserves",
+                    "right"
+                ],
+                "to": [
+                    "Run SpineOpt - simple reserves",
+                    "left"
+                ]
+            },
+            {
+                "name": "from SpineOpt demo DB - rolling horizon to Run SpineOpt - rolling horizon",
+                "from": [
+                    "SpineOpt demo DB - rolling horizon",
+                    "right"
+                ],
+                "to": [
+                    "Run SpineOpt - rolling horizon",
+                    "left"
+                ]
+            },
+            {
+                "name": "from SpineOpt demo DB - unit investment to Run SpineOpt - unit investment",
+                "from": [
+                    "SpineOpt demo DB - unit investment",
+                    "right"
+                ],
+                "to": [
+                    "Run SpineOpt - unit investment",
+                    "left"
+                ]
+            },
+            {
+                "name": "from Run SpineOpt - simple reserves to Output DB",
+                "from": [
+                    "Run SpineOpt - simple reserves",
+                    "right"
+                ],
+                "to": [
+                    "Output DB",
+                    "left"
+                ]
+            },
+            {
+                "name": "from Run SpineOpt - rolling horizon to Output DB",
+                "from": [
+                    "Run SpineOpt - rolling horizon",
+                    "right"
+                ],
+                "to": [
+                    "Output DB",
+                    "left"
+                ]
+            },
+            {
+                "name": "from Run SpineOpt - unit investment to Output DB",
+                "from": [
+                    "Run SpineOpt - unit investment",
+                    "right"
+                ],
+                "to": [
+                    "Output DB",
+                    "left"
+                ]
             }
         ],
         "jumps": []
@@ -85,38 +189,22 @@
         "Load SpineOpt template": {
             "type": "Tool",
             "description": "",
-            "x": -437.0276900380326,
-            "y": 130.04766331082976,
+            "x": -627.3763060950689,
+            "y": -39.03860733558018,
             "specification": "Load template",
             "execute_in_work": false,
             "cmd_line_args": [
                 {
                     "type": "resource",
-                    "arg": "db_url@SpineOpt reserve demo DB"
+                    "arg": "db_url@SpineOpt demo DB - operating reserves"
                 }
             ]
-        },
-        "SpineOpt reserve demo DB": {
-            "type": "Data Store",
-            "description": "",
-            "x": -249.97770584923452,
-            "y": 129.42572457731924,
-            "url": {
-                "dialect": "sqlite",
-                "host": "",
-                "port": "",
-                "database": {
-                    "type": "path",
-                    "relative": true,
-                    "path": ".spinetoolbox/items/spineopt_reserve_demo_db/data_store_reserve.sqlite"
-                }
-            }
         },
         "Output DB": {
             "type": "Data Store",
             "description": "",
-            "x": 137.72284660743964,
-            "y": 128.36701789598337,
+            "x": 34.44859747011141,
+            "y": 32.18021722886394,
             "url": {
                 "dialect": "sqlite",
                 "host": "",
@@ -132,7 +220,7 @@
             "type": "Data Store",
             "description": "",
             "x": -441.6570821364565,
-            "y": -15.991346154963978,
+            "y": -289.4061969083589,
             "url": {
                 "dialect": "sqlite",
                 "host": "",
@@ -147,8 +235,8 @@
         "SpineFormatDB 2": {
             "type": "Data Store",
             "description": "",
-            "x": -448.2968891787293,
-            "y": -166.2224420550345,
+            "x": -441.26047757845805,
+            "y": -190.34728182739286,
             "url": {
                 "dialect": "sqlite",
                 "host": "",
@@ -163,8 +251,8 @@
         "SpineFormat Julia JuMP Model 2": {
             "type": "Tool",
             "description": "",
-            "x": -243.3166497906581,
-            "y": -165.5625063178618,
+            "x": -246.3322547622029,
+            "y": -190.69254774740176,
             "specification": "Spine_julia_model_1",
             "execute_in_work": false,
             "cmd_line_args": [
@@ -177,8 +265,8 @@
         "SpineFormat Julia JuMP Model 1": {
             "type": "Tool",
             "description": "",
-            "x": -248.12572562438186,
-            "y": -16.007404209681845,
+            "x": -243.09971733847385,
+            "y": -289.4222549630767,
             "specification": "Spine_julia_model_1",
             "execute_in_work": true,
             "cmd_line_args": [
@@ -188,17 +276,144 @@
                 }
             ]
         },
-        "Run SpineOpt": {
+        "SpineOpt demo DB - rolling horizon": {
+            "type": "Data Store",
+            "description": "",
+            "x": -429.46995476354226,
+            "y": 98.59820795956384,
+            "url": {
+                "dialect": "sqlite",
+                "host": "",
+                "port": "",
+                "database": {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/items/spineopt_demo_db_-_rolling_horizon/SpineOptDB_rolling.sqlite"
+                }
+            }
+        },
+        "SpineOpt demo DB - operating reserves": {
+            "type": "Data Store",
+            "description": "",
+            "x": -431.2138881588596,
+            "y": -78.13526633593845,
+            "url": {
+                "dialect": "sqlite",
+                "host": "",
+                "port": "",
+                "database": {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/items/spineopt_demo_db_-_operating_reserves/SpineOptDB_reserves.sqlite"
+                }
+            }
+        },
+        "Run SpineOpt - reserves demo": {
             "type": "Tool",
             "description": "",
-            "x": -34.484449199992056,
-            "y": 128.37050300002474,
-            "specification": "Run SpineOpt customised detailed",
+            "x": -253.17556815644394,
+            "y": -58.940635141207856,
+            "specification": "Run SpineOpt customised",
             "execute_in_work": true,
             "cmd_line_args": [
                 {
                     "type": "resource",
-                    "arg": "db_url@SpineOpt reserve demo DB"
+                    "arg": "db_url@SpineOpt demo DB - operating reserves"
+                },
+                {
+                    "type": "resource",
+                    "arg": "db_url@Output DB"
+                }
+            ]
+        },
+        "SpineOpt demo DB - simple reserves": {
+            "type": "Data Store",
+            "description": "reserves without ramping",
+            "x": -430.30937140553436,
+            "y": 10.124926386012618,
+            "url": {
+                "dialect": "sqlite",
+                "host": "",
+                "port": "",
+                "database": {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/items/spineopt_demo_db_-_simple_reserves/SpineOptDB_simple-reserves.sqlite"
+                }
+            }
+        },
+        "SpineOpt demo DB - unit investment": {
+            "type": "Data Store",
+            "description": "",
+            "x": -428.2843861283318,
+            "y": 190.34861605703637,
+            "url": {
+                "dialect": "sqlite",
+                "host": "",
+                "port": "",
+                "database": {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/items/spineopt_demo_db_-_unit_investment/SpineOptDB_unit-investment.sqlite"
+                }
+            }
+        },
+        "Run_SpineOpt_Gurobi_sample": {
+            "type": "Tool",
+            "description": "",
+            "x": -41.512198182651545,
+            "y": -154.91137370599236,
+            "specification": "Run_SpineOpt_Gurobi",
+            "execute_in_work": true,
+            "cmd_line_args": []
+        },
+        "Run SpineOpt - simple reserves": {
+            "type": "Tool",
+            "description": "",
+            "x": -252.11066701171305,
+            "y": 31.38727179663897,
+            "specification": "Run SpineOpt customised",
+            "execute_in_work": true,
+            "cmd_line_args": [
+                {
+                    "type": "resource",
+                    "arg": "db_url@SpineOpt demo DB - simple reserves"
+                },
+                {
+                    "type": "resource",
+                    "arg": "db_url@Output DB"
+                }
+            ]
+        },
+        "Run SpineOpt - rolling horizon": {
+            "type": "Tool",
+            "description": "",
+            "x": -254.13565228891554,
+            "y": 118.4616387163471,
+            "specification": "Run SpineOpt customised",
+            "execute_in_work": true,
+            "cmd_line_args": [
+                {
+                    "type": "resource",
+                    "arg": "db_url@SpineOpt demo DB - rolling horizon"
+                },
+                {
+                    "type": "resource",
+                    "arg": "db_url@Output DB"
+                }
+            ]
+        },
+        "Run SpineOpt - unit investment": {
+            "type": "Tool",
+            "description": "",
+            "x": -254.13565228891557,
+            "y": 206.54849827465642,
+            "specification": "Run SpineOpt customised",
+            "execute_in_work": true,
+            "cmd_line_args": [
+                {
+                    "type": "resource",
+                    "arg": "db_url@SpineOpt demo DB - unit investment"
                 },
                 {
                     "type": "resource",

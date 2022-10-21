@@ -1,6 +1,6 @@
 using SpineInterface
 
-path = "sqlite:///C:\\HJY_projects\\Playground\\miniSpine\\.spinetoolbox\\items\\test\\EPISCOPEdatastore.sqlite"
+path = "sqlite:///$(@__DIR__)\\.spinetoolbox\\items\\spineopt_demo_db_-_operating_reserves\\EPISCOPEdatastore.sqlite"
 
 using_spinedb(path)
 # now we have a direct handle access entities of the sqlite db from the path
