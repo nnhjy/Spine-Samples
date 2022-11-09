@@ -95,17 +95,6 @@
                 ]
             },
             {
-                "name": "from Load SpineOpt template to SpineOpt demo DB - rolling horizon",
-                "from": [
-                    "Load SpineOpt template",
-                    "bottom"
-                ],
-                "to": [
-                    "SpineOpt demo DB - rolling horizon",
-                    "left"
-                ]
-            },
-            {
                 "name": "from Load SpineOpt template to SpineOpt demo DB - unit investment",
                 "from": [
                     "Load SpineOpt template",
@@ -214,6 +203,50 @@
                     "SpineOpt demo DB - piecewise unit flow",
                     "left"
                 ]
+            },
+            {
+                "name": "from SpineOpt demo DB - aggregated demand to Run SpineOpt - aggregated demand",
+                "from": [
+                    "SpineOpt demo DB - aggregated demand",
+                    "right"
+                ],
+                "to": [
+                    "Run SpineOpt - aggregated demand",
+                    "left"
+                ]
+            },
+            {
+                "name": "from Load SpineOpt template to SpineOpt demo DB - aggregated demand",
+                "from": [
+                    "Load SpineOpt template",
+                    "bottom"
+                ],
+                "to": [
+                    "SpineOpt demo DB - aggregated demand",
+                    "left"
+                ]
+            },
+            {
+                "name": "from Run SpineOpt - aggregated demand to Output DB",
+                "from": [
+                    "Run SpineOpt - aggregated demand",
+                    "right"
+                ],
+                "to": [
+                    "Output DB",
+                    "bottom"
+                ]
+            },
+            {
+                "name": "from Load SpineOpt template to SpineOpt demo DB - rolling horizon",
+                "from": [
+                    "Load SpineOpt template",
+                    "right"
+                ],
+                "to": [
+                    "SpineOpt demo DB - rolling horizon",
+                    "left"
+                ]
             }
         ],
         "jumps": []
@@ -312,8 +345,8 @@
         "SpineOpt demo DB - rolling horizon": {
             "type": "Data Store",
             "description": "",
-            "x": -425.4015156310779,
-            "y": 9.092547045347999,
+            "x": -387.4197174574225,
+            "y": -62.53027236783089,
             "url": {
                 "dialect": "sqlite",
                 "host": "",
@@ -328,8 +361,8 @@
         "SpineOpt demo DB - operating reserves": {
             "type": "Data Store",
             "description": "",
-            "x": -436.29943707444005,
-            "y": -243.924160983861,
+            "x": -387.4656965654545,
+            "y": -274.3095995227854,
             "url": {
                 "dialect": "sqlite",
                 "host": "",
@@ -362,8 +395,8 @@
         "SpineOpt demo DB - simple reserves": {
             "type": "Data Store",
             "description": "reserves without ramping",
-            "x": -424.20671270683783,
-            "y": -106.84269867233763,
+            "x": -387.31010876671536,
+            "y": -162.18760458252126,
             "url": {
                 "dialect": "sqlite",
                 "host": "",
@@ -378,8 +411,8 @@
         "SpineOpt demo DB - unit investment": {
             "type": "Data Store",
             "description": "",
-            "x": -420.14750786340306,
-            "y": 105.92850405840096,
+            "x": -387.59168085741265,
+            "y": 38.646461579354124,
             "url": {
                 "dialect": "sqlite",
                 "host": "",
@@ -403,8 +436,8 @@
         "Run SpineOpt - simple reserves": {
             "type": "Tool",
             "description": "",
-            "x": -204.30650720525688,
-            "y": -105.92254892403305,
+            "x": -208.64728413938892,
+            "y": -139.56357016355645,
             "specification": "Run SpineOpt customised",
             "execute_in_work": true,
             "cmd_line_args": [
@@ -421,8 +454,8 @@
         "Run SpineOpt - rolling horizon": {
             "type": "Tool",
             "description": "",
-            "x": -213.45126096427197,
-            "y": 12.682221272273821,
+            "x": -210.1956782636729,
+            "y": -37.236713470244794,
             "specification": "Run SpineOpt customised",
             "execute_in_work": true,
             "cmd_line_args": [
@@ -439,8 +472,8 @@
         "Run SpineOpt - unit investment": {
             "type": "Tool",
             "description": "",
-            "x": -196.16039465129845,
-            "y": 104.83751996304748,
+            "x": -211.35311392076062,
+            "y": 60.34455638819395,
             "specification": "Run SpineOpt customised",
             "execute_in_work": true,
             "cmd_line_args": [
@@ -457,8 +490,8 @@
         "SpineOpt demo DB - piecewise unit flow": {
             "type": "Data Store",
             "description": "Piecewise linear unit flow conversion with user constraints",
-            "x": -422.10055999317683,
-            "y": 200.37062727386956,
+            "x": -388.4595387536534,
+            "y": 136.34416749542177,
             "url": {
                 "dialect": "sqlite",
                 "host": "",
@@ -473,14 +506,48 @@
         "Run SpineOpt - piecewise unit flow": {
             "type": "Tool",
             "description": "",
-            "x": -204.43906640633392,
-            "y": 200.37062727386956,
+            "x": -213.120620274598,
+            "y": 160.21844063314808,
             "specification": "Run SpineOpt customised",
             "execute_in_work": true,
             "cmd_line_args": [
                 {
                     "type": "resource",
                     "arg": "db_url@SpineOpt demo DB - piecewise unit flow"
+                },
+                {
+                    "type": "resource",
+                    "arg": "db_url@Output DB"
+                }
+            ]
+        },
+        "SpineOpt demo DB - aggregated demand": {
+            "type": "Data Store",
+            "description": "reserves without ramping",
+            "x": -387.41434137128573,
+            "y": 234.40195444313088,
+            "url": {
+                "dialect": "sqlite",
+                "host": "",
+                "port": "",
+                "database": {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/items/spineopt_demo_db_-_aggregated_demand/SpineOptDB_aggregated-demand.sqlite"
+                }
+            }
+        },
+        "Run SpineOpt - aggregated demand": {
+            "type": "Tool",
+            "description": "",
+            "x": -214.8684582395366,
+            "y": 257.19103334732415,
+            "specification": "Run SpineOpt customised",
+            "execute_in_work": true,
+            "cmd_line_args": [
+                {
+                    "type": "resource",
+                    "arg": "db_url@SpineOpt demo DB - aggregated demand"
                 },
                 {
                     "type": "resource",
