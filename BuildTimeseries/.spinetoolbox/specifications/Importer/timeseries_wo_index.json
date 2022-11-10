@@ -65,7 +65,8 @@
                 "delimiter": ",",
                 "quotechar": "\"",
                 "skip": 0,
-                "has_header": false
+                "has_header": false,
+                "header": false
             }
         },
         "table_types": {
@@ -78,6 +79,7 @@
                 "5": "float"
             }
         },
+        "table_default_column_type": {},
         "table_row_types": {},
         "source_type": "CSVConnector"
     },

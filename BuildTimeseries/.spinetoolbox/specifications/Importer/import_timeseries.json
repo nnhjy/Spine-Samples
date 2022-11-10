@@ -74,8 +74,9 @@
                 "5": "float"
             }
         },
+        "table_default_column_type": {},
         "table_row_types": {},
         "source_type": "ExcelConnector"
     },
-    "description": ""
+    "description": "Apply data type \"integer sequence datetime\" to the artefical index column (column 1 here), which allows to set a customised datetime series."
 }
