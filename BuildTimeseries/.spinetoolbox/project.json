@@ -1,7 +1,6 @@
 {
     "project": {
-        "version": 8,
-        "name": "BuildTimeseries",
+        "version": 9,
         "description": "A workflow to build timeseries parameter value from a list of non-indexed values",
         "specifications": {
             "Importer": [

@@ -1,7 +1,6 @@
 {
     "project": {
-        "version": 8,
-        "name": "Hydro Reservoir Example",
+        "version": 9,
         "description": "",
         "specifications": {},
         "connections": [

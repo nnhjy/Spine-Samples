@@ -1,7 +1,6 @@
 {
     "project": {
-        "version": 8,
-        "name": "SpineDemo",
+        "version": 9,
         "description": "A demonstration on Spine toolkits.",
         "specifications": {
             "Tool": [
