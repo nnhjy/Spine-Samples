@@ -4,7 +4,7 @@
 logs/
 *.log
 output/
-*.bak
+*.bak*
 local/
 # items/
 # *.sqlite
