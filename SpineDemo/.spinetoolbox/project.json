@@ -262,6 +262,30 @@
                 {
                     "type": "resource",
                     "arg": "db_url@SpineOpt demo DB - operating reserves"
+                },
+                {
+                    "type": "resource",
+                    "arg": "db_url@SpineOpt demo DB - operating reserves"
+                },
+                {
+                    "type": "resource",
+                    "arg": "db_url@SpineOpt demo DB - simple reserves"
+                },
+                {
+                    "type": "resource",
+                    "arg": "db_url@SpineOpt demo DB - unit investment"
+                },
+                {
+                    "type": "resource",
+                    "arg": "db_url@SpineOpt demo DB - piecewise unit flow"
+                },
+                {
+                    "type": "resource",
+                    "arg": "db_url@SpineOpt demo DB - aggregated demand"
+                },
+                {
+                    "type": "resource",
+                    "arg": "db_url@SpineOpt demo DB - rolling horizon"
                 }
             ]
         },
