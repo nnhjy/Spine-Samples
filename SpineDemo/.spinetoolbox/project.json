@@ -47,7 +47,21 @@
                 "to": [
                     "Run SpineOpt - reserves demo",
                     "left"
-                ]
+                ],
+                "filter_settings": {
+                    "known_filters": {
+                        "db_url@SpineOpt demo DB - operating reserves": {
+                            "scenario_filter": {
+                                "reserve": true,
+                                "reserve_with_investment": true
+                            },
+                            "tool_filter": {
+                                "object_activity_control": true
+                            }
+                        }
+                    },
+                    "auto_online": true
+                }
             },
             {
                 "name": "from Run SpineOpt - reserves demo to Output DB",
@@ -113,7 +127,18 @@
                 "to": [
                     "Run SpineOpt - simple reserves",
                     "left"
-                ]
+                ],
+                "filter_settings": {
+                    "known_filters": {
+                        "db_url@SpineOpt demo DB - simple reserves": {
+                            "scenario_filter": {},
+                            "tool_filter": {
+                                "object_activity_control": true
+                            }
+                        }
+                    },
+                    "auto_online": true
+                }
             },
             {
                 "name": "from SpineOpt demo DB - rolling horizon to Run SpineOpt - rolling horizon",
@@ -124,7 +149,18 @@
                 "to": [
                     "Run SpineOpt - rolling horizon",
                     "left"
-                ]
+                ],
+                "filter_settings": {
+                    "known_filters": {
+                        "db_url@SpineOpt demo DB - rolling horizon": {
+                            "scenario_filter": {},
+                            "tool_filter": {
+                                "object_activity_control": true
+                            }
+                        }
+                    },
+                    "auto_online": true
+                }
             },
             {
                 "name": "from SpineOpt demo DB - unit investment to Run SpineOpt - unit investment",
@@ -135,7 +171,21 @@
                 "to": [
                     "Run SpineOpt - unit investment",
                     "left"
-                ]
+                ],
+                "filter_settings": {
+                    "known_filters": {
+                        "db_url@SpineOpt demo DB - unit investment": {
+                            "scenario_filter": {
+                                "Asynchro_Operation_Investment": true,
+                                "Synchro_Operation_Investment": true
+                            },
+                            "tool_filter": {
+                                "object_activity_control": true
+                            }
+                        }
+                    },
+                    "auto_online": true
+                }
             },
             {
                 "name": "from Run SpineOpt - simple reserves to Output DB",
@@ -179,7 +229,24 @@
                 "to": [
                     "Run SpineOpt - piecewise unit flow",
                     "left"
-                ]
+                ],
+                "filter_settings": {
+                    "known_filters": {
+                        "db_url@SpineOpt demo DB - piecewise unit flow": {
+                            "scenario_filter": {
+                                "NoSourceFuelCost_EffDown": true,
+                                "NoSourceFuelCost_EffUp": true,
+                                "WithSourceFuelCost_EffDown": true,
+                                "WithSourceFuelCost_EffUp": true,
+                                "WithSourceFuelCost_EffUp_MILP": true
+                            },
+                            "tool_filter": {
+                                "object_activity_control": true
+                            }
+                        }
+                    },
+                    "auto_online": true
+                }
             },
             {
                 "name": "from Run SpineOpt - piecewise unit flow to Output DB",
@@ -212,7 +279,18 @@
                 "to": [
                     "Run SpineOpt - aggregated demand",
                     "left"
-                ]
+                ],
+                "filter_settings": {
+                    "known_filters": {
+                        "db_url@SpineOpt demo DB - aggregated demand": {
+                            "scenario_filter": {},
+                            "tool_filter": {
+                                "object_activity_control": true
+                            }
+                        }
+                    },
+                    "auto_online": true
+                }
             },
             {
                 "name": "from Load SpineOpt template to SpineOpt demo DB - aggregated demand",
