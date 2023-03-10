@@ -10,7 +10,7 @@ using SpineOpt
 
 # command to run this script from a Julia console
 # include("path\\to\\run_SpineOpt.jl")
-# e.g. include("..\\spine\\Case_study_B3\\spine-cs-b3\\run_SpineOpt.jl")
+# e.g. include("..\\Spine-Samples\SpineDemo\\run_SpineOpt.jl")
 
 # if isdefined(Main, :IJulia) && Main.IJulia.inited
 #     Main.IJulia.stdio_bytes[] = 0
@@ -33,6 +33,7 @@ end
 
 # m = run_spineopt(
 # 		ARGS...,
+#		update_name-true,	# update the denotation time of rolling window
 # 		mip_solver=optimizer_with_attributes(CPLEX.Optimizer, "CPX_PARAM_EPGAP" => 0.01),
 # 		lp_solver=optimizer_with_attributes(CPLEX.Optimizer)
 # 	  )
@@ -49,15 +50,24 @@ end
 #####################
 
 # Show active variables and constraints
-println("*** Active variables: ***")
-for key in keys(m.ext[:spineopt].variables)
-    !isempty(m.ext[:spineopt].variables[key]) && println(key)
-end
-println("*** Active constraints: ***")
-for key in keys(m.ext[:spineopt].constraints)
-    !isempty(m.ext[:spineopt].constraints[key]) && println(key)
-end
 println("*** Unlisted active values: ***")
 for key in setdiff(keys(m.ext[:spineopt].values), keys(m.ext[:spineopt].outputs))
     !isempty(m.ext[:spineopt].values[key]) && println(key)
+end
+
+"""
+A function to print the active items in the built SpineOpt model.
+"""
+function print_active(m::JuMP.Model, item::Symbol)
+    println("*** Active $item: ***")
+    eval(
+        :(for key in keys(m.ext[:spineopt].$item)
+            !isempty(m.ext[:spineopt].$item[key]) && println(key)
+        end)
+    )
+end
+
+items = [:variables, :constraints, :objective_terms]
+for i in items
+    print_active(m, i)
 end

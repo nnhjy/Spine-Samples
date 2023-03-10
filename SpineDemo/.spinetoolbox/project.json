@@ -234,10 +234,10 @@
                     "known_filters": {
                         "db_url@SpineOpt demo DB - piecewise unit flow": {
                             "scenario_filter": {
-                                "NoSourceFuelCost_EffDown": true,
-                                "NoSourceFuelCost_EffUp": true,
-                                "WithSourceFuelCost_EffDown": true,
-                                "WithSourceFuelCost_EffUp": true,
+                                "NoSourceFuelCost_EffDown": false,
+                                "NoSourceFuelCost_EffUp": false,
+                                "WithSourceFuelCost_EffDown": false,
+                                "WithSourceFuelCost_EffUp": false,
                                 "WithSourceFuelCost_EffUp_MILP": true
                             },
                             "tool_filter": {
