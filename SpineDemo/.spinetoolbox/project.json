@@ -365,7 +365,8 @@
                     "type": "resource",
                     "arg": "db_url@SpineOpt demo DB - rolling horizon"
                 }
-            ]
+            ],
+            "kill_completed_processes": false
         },
         "Output DB": {
             "type": "Data Store",
@@ -427,7 +428,8 @@
                     "type": "resource",
                     "arg": "db_url@SpineFormatDB 2"
                 }
-            ]
+            ],
+            "kill_completed_processes": false
         },
         "SpineFormat Julia JuMP Model 1": {
             "type": "Tool",
@@ -441,7 +443,8 @@
                     "type": "resource",
                     "arg": "db_url@SpineFormatDB 1"
                 }
-            ]
+            ],
+            "kill_completed_processes": false
         },
         "SpineOpt demo DB - rolling horizon": {
             "type": "Data Store",
@@ -491,7 +494,8 @@
                     "type": "resource",
                     "arg": "db_url@Output DB"
                 }
-            ]
+            ],
+            "kill_completed_processes": false
         },
         "SpineOpt demo DB - simple reserves": {
             "type": "Data Store",
@@ -532,7 +536,8 @@
             "y": 131.9135851327448,
             "specification": "Run_SpineOpt_Gurobi",
             "execute_in_work": true,
-            "cmd_line_args": []
+            "cmd_line_args": [],
+            "kill_completed_processes": false
         },
         "Run SpineOpt - simple reserves": {
             "type": "Tool",
@@ -550,7 +555,8 @@
                     "type": "resource",
                     "arg": "db_url@Output DB"
                 }
-            ]
+            ],
+            "kill_completed_processes": false
         },
         "Run SpineOpt - rolling horizon": {
             "type": "Tool",
@@ -568,7 +574,8 @@
                     "type": "resource",
                     "arg": "db_url@Output DB"
                 }
-            ]
+            ],
+            "kill_completed_processes": false
         },
         "Run SpineOpt - unit investment": {
             "type": "Tool",
@@ -586,7 +593,8 @@
                     "type": "resource",
                     "arg": "db_url@Output DB"
                 }
-            ]
+            ],
+            "kill_completed_processes": false
         },
         "SpineOpt demo DB - piecewise unit flow": {
             "type": "Data Store",
@@ -620,7 +628,8 @@
                     "type": "resource",
                     "arg": "db_url@Output DB"
                 }
-            ]
+            ],
+            "kill_completed_processes": false
         },
         "SpineOpt demo DB - aggregated demand": {
             "type": "Data Store",
@@ -654,7 +663,8 @@
                     "type": "resource",
                     "arg": "db_url@Output DB"
                 }
-            ]
+            ],
+            "kill_completed_processes": false
         }
     }
 }
