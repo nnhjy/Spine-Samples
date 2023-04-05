@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/510028817.svg)](https://zenodo.org/badge/latestdoi/510028817)
+
 # Set up work environment for Spine toolkits
 
 ## Python (virtual) environment setup
