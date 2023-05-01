@@ -58,7 +58,7 @@ end
 """
 A function to print the active items in the built SpineOpt model.
 """
-function print_active(m::JuMP.Model, item::Symbol)
+function print_active(m, item::Symbol)
     println("*** Active $item: ***")
     eval(
         :(for key in keys(m.ext[:spineopt].$item)
