@@ -221,34 +221,6 @@
                 ]
             },
             {
-                "name": "from SpineOpt demo DB - piecewise unit flow to Run SpineOpt - piecewise unit flow",
-                "from": [
-                    "SpineOpt demo DB - piecewise unit flow",
-                    "right"
-                ],
-                "to": [
-                    "Run SpineOpt - piecewise unit flow",
-                    "left"
-                ],
-                "filter_settings": {
-                    "known_filters": {
-                        "db_url@SpineOpt demo DB - piecewise unit flow": {
-                            "scenario_filter": {
-                                "NoSourceFuelCost_EffDown": false,
-                                "NoSourceFuelCost_EffUp": false,
-                                "WithSourceFuelCost_EffDown": false,
-                                "WithSourceFuelCost_EffUp": false,
-                                "WithSourceFuelCost_EffUp_MILP": true
-                            },
-                            "tool_filter": {
-                                "object_activity_control": true
-                            }
-                        }
-                    },
-                    "auto_online": true
-                }
-            },
-            {
                 "name": "from Run SpineOpt - piecewise unit flow to Output DB",
                 "from": [
                     "Run SpineOpt - piecewise unit flow",
@@ -324,6 +296,34 @@
                     "SpineOpt demo DB - rolling horizon",
                     "left"
                 ]
+            },
+            {
+                "name": "from SpineOpt demo DB - piecewise unit flow to Run SpineOpt - piecewise unit flow",
+                "from": [
+                    "SpineOpt demo DB - piecewise unit flow",
+                    "right"
+                ],
+                "to": [
+                    "Run SpineOpt - piecewise unit flow",
+                    "left"
+                ],
+                "filter_settings": {
+                    "known_filters": {
+                        "db_url@SpineOpt demo DB - piecewise unit flow": {
+                            "scenario_filter": {
+                                "NoSourceFuelCost_EffDown": true,
+                                "NoSourceFuelCost_EffUp": true,
+                                "WithSourceFuelCost_EffDown": true,
+                                "WithSourceFuelCost_EffUp": true,
+                                "WithSourceFuelCost_EffUp_MILP": true
+                            },
+                            "tool_filter": {
+                                "object_activity_control": true
+                            }
+                        }
+                    },
+                    "auto_online": true
+                }
             }
         ],
         "jumps": []
@@ -380,7 +380,7 @@
                 "database": {
                     "type": "path",
                     "relative": true,
-                    "path": ".spinetoolbox/items/output_db/test_output.sqlite"
+                    "path": ".spinetoolbox/items/output_db/Output DB.sqlite"
                 }
             }
         },
@@ -608,7 +608,7 @@
                 "database": {
                     "type": "path",
                     "relative": true,
-                    "path": ".spinetoolbox/items/spineopt_demo_db_-_piecewise_unit_flow/SpineOptDB_piecewise-unit-flow.sqlite"
+                    "path": ".spinetoolbox/items/spineopt_demo_db_-_piecewise_unit_flow/SpineOpt demo DB - piecewise unit flow.sqlite"
                 }
             }
         },
