@@ -335,7 +335,7 @@
             "x": -627.3763060950689,
             "y": -39.03860733558018,
             "specification": "Load template",
-            "execute_in_work": false,
+            "execute_in_work": true,
             "cmd_line_args": [
                 {
                     "type": "resource",
