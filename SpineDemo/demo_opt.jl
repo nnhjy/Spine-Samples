@@ -13,42 +13,43 @@ url = ARGS[1]
 
 using_spinedb(url)
 
-opt = optimizer_with_attributes(Cbc.Optimizer, "loglevel" => 0)
+function setup_snapshot_model(ts::TimeSlice)
+	opt = optimizer_with_attributes(Cbc.Optimizer, "loglevel" => 0)
+	m = Model(opt)
+	
+	@variable(m, flow[(u,n) in unit__node()], lower_bound=0)
 
-m = Model(opt)
+	@constraint(m, dem[n in node()], sum(flow[(unit=u, node=n)] for u in unit__node(node=n)) == demand[(node=n, t=ts)])
+	# demand[(node=node(:node1), t=ts)]: {demand(node=node1, t=2001-01-01T00:00~>2002-01-01T00:00) = 110.0}
+	# demand(node=n, t=ts): 110.0
+	@constraint(m, cap[u in unit()], sum(flow[(unit=u, node=n)] for n in unit__node(unit=u)) <= capacity(unit=u))
 
-@variable(m, flow[(u,n) in unit__node()], lower_bound=0)
+	@objective(m, Min, sum(cost(unit=u) * flow[(unit=u, node=n)] for (u, n) in unit__node()))
 
-@constraint(m, dem[n in node()], sum(flow[(unit=u, node=n)] for u in unit__node(node=n)) == demand[(node=n, t=ts)])
+	m
+end
 
-# demand[(node=node(:node1), t=ts)]: {demand(node=node1, t=2001-01-01T00:00~>2002-01-01T00:00) = 110.0}
-# demand(node=n, t=ts): 110.0
-
-@constraint(m, cap[u in unit()], sum(flow[(unit=u, node=n)] for n in unit__node(unit=u)) <= capacity(unit=u))
-
-@objective(m, Min, sum(cost(unit=u) * flow[(unit=u, node=n)] for (u, n) in unit__node()))
-
-function solve()
+function solve(m::JuMP.Model)
 	println(m)
 	optimize!(m)
 
 	for k in unit__node()
-		print("$(k): ", value(flow[k]), "\n")
-		@show value(flow[k])
+		print("flow$(k): ", value(m[:flow][k]), "\n")
 	end
 
 	@show objective_value(m)
 end
 
-solve()
+m = setup_snapshot_model(ts)
+
+solve(m)
 
 for i in 2:6
-	println("\nRoll! $i\n")
+	println("\nRoll time slice $i\n")
 	roll!(ts, Year(1))
-	update_model!(m)
+	m = setup_snapshot_model(ts)
 
-	solve()
-
+	solve(m)
 end
 
 # call entity classes in Spine DB to see all affiliated elements

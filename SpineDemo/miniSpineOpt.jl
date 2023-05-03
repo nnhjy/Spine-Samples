@@ -16,7 +16,7 @@ m = Model(optimizer)
 
 @constraint(
     m, nodal_balance[n in node()],
-    sum(flow[(unit=u, node=n)] for u in unit__node(node=n)) == demand(node=n)
+    sum(flow[(unit=u, node=n)] for u in unit__node(node=n); init=0.0) == demand(node=n)
 )
 
 @objective(m, Min, sum(op_cost(unit=u) * flow[(unit=u, node=n)] for (u, n) in unit__node()))
