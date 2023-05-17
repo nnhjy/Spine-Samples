@@ -1,9 +1,9 @@
 cff-version: 1.1.0
 message: "If you use this software, please cite it as below."
 authors:
-  - family-names: Joe
-    given-names: Johnson
-    orcid: https://orcid.org/0000-0000-0000-0000
-title: nnhjy/Spine-Samples: First release
-version: 0.0.0-alpha
-date-released: 2023-04-05
+  - family-names: Huang
+    given-names: Jiangyi
+    orcid: https://orcid.org/0000-0002-0093-2276
+title: nnhjy/Spine-Samples: A working release
+version: 0.0.0-beta
+date-released: 2023-05-17
