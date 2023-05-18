@@ -5,5 +5,5 @@ authors:
     given-names: Jiangyi
     orcid: https://orcid.org/0000-0002-0093-2276
 title: nnhjy/Spine-Samples: A working release
-version: 0.0.0-beta
-date-released: 2023-05-17
+version: v0.0.0
+date-released: 2023-05-18
