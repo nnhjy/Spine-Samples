@@ -1,5 +1,18 @@
 [![DOI](https://zenodo.org/badge/510028817.svg)](https://zenodo.org/badge/latestdoi/510028817)
 
+# Overview
+This repository consists of 3 [Spine-Toolbox](https://github.com/Spine-tools/Spine-Toolbox) projects.
+
+## 1. BuildTimeseries project 
+A demo workflow to attach "DateTime" index to TimeSeries data
+
+## 2. Hydro reservoir example
+A sample [SpineOpt.jl](https://github.com/Spine-tools/SpineOpt.jl) model for hydro reservoir generation
+
+## 3. Spine Demo
+A project containing several Spine database to illustrate [SpineOpt.jl](https://github.com/Spine-tools/SpineOpt.jl) functionalities (demo `SpineOpt` models) and [SpineInterface.jl](https://github.com/spine-tools/SpineInterface.jl) utilities (incl. improvising Julia JuMP models using `SpineInterface` to interact with SpineDB)
+
+
 # Set up work environment for Spine toolkits
 
 ## Python (virtual) environment setup
@@ -11,7 +24,6 @@
 	- Run "`.\Scripts\activate`" to activate the target virenv
 	- Run "`pip install -e package`" in terminal under the activated virtual environment (the "`-e`" option is only needed for installing editable package, see [pip install options](https://pip.pypa.io/en/stable/cli/pip_install/#options))
 When the ipython and ipykernel (maybe only ipykernel needed) packages are installed, command "`pip install -e local\package`" can be used in the Python console where the new virtual environment is launched. 
-
 
 ## Julia environment setup
 1. Install julia
