@@ -1,6 +1,6 @@
 {
     "project": {
-        "version": 10,
+        "version": 11,
         "description": "A demonstration on Spine toolkits.",
         "specifications": {
             "Tool": [
@@ -326,7 +326,10 @@
                 }
             }
         ],
-        "jumps": []
+        "jumps": [],
+        "settings": {
+            "enable_execute_all": true
+        }
     },
     "items": {
         "Load SpineOpt template": {
