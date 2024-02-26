@@ -1,6 +1,6 @@
 {
     "project": {
-        "version": 10,
+        "version": 11,
         "description": "A workflow to build timeseries parameter value from a list of non-indexed values",
         "specifications": {
             "Importer": [
@@ -88,7 +88,10 @@
                 }
             }
         ],
-        "jumps": []
+        "jumps": [],
+        "settings": {
+            "enable_execute_all": true
+        }
     },
     "items": {
         "Data Connection test": {
