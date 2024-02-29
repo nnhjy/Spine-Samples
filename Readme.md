@@ -147,4 +147,4 @@ coda activate spine-tools
 	```
 - Relaunch Julia and check which python the PyCall is using: `PyCall.pyprogramname` or `PyCall.python`
 
-**Note**: Under this configuration, only running the `spinetoolbox` requires activating the conda environment. Once the `PyCall.jl` is configured to use the conda python, there is no need to activate the conda environment for `julia` related tasks, e.g. updating packages, running `SpineOpt.jl` and `SpineInterface.jl`, etc.
+**Note**: Under this configuration, only running the `spinetoolbox` requires activating the conda environment. Once the `PyCall.jl` is configured to use the conda python, there is no need to activate the conda environment for `julia` related tasks, e.g. ***updating environment packages (actually doing this with the conda activated causes error)***.
