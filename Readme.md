@@ -50,8 +50,7 @@ When the ipython and ipykernel (maybe only ipykernel needed) packages are instal
 		- Confirm the default conda python is linked: 
 		```julia
 		julia> ENV["PYTHON"]=""
-		julia> using PyCall
-		julia> using Pkg
+		julia> using PyCall, Pkg
 		julia> Pkg.build("PyCall")
 		```
 		- [Find the conda python](https://github.com/nnhjy/julia-introduction#manage-julia-conda-environment)
@@ -116,10 +115,10 @@ coda activate spine-tools
 	- **python 3.11** from [miniconda](https://docs.conda.io/en/latest/miniconda.html)
 	- [git](https://git-scm.com/downloads)
 
-- Create a new conda environment:
+- Create a new conda virtual environment:
 
 	```console
-	conda create -n spine-tools python=3.11
+	conda create -n spine-dev python=3.11
 	```
 
 - install the python packages of spine-tools:
@@ -133,9 +132,19 @@ coda activate spine-tools
 	```
 
 - Assign the conda python to PyCall.jl:
+	```console
+	conda activate spine-dev
+	cd path\to\the\working\julia\enviroment
+	```
+	
 	```julia
-	julia> ENV["PYTHON"] = Sys.which("python")
-	julia> ENV["PYCALL_JL_RUNTIME_PYTHON"] = Sys.which("python")
-	julia> import Pkg; Pkg.build("PyCall")
+	cd("path\\to\\the\\working\\julia\\enviroment")
+	# the python of current console environment, also works with non-conda python
+	ENV["PYTHON"] = Sys.which("python")
+	# or when a conda environment is activated
+	# ENV["PYTHON"] = ENV["CONDA_PREFIX"] * "\\python.exe"
+	import Pkg; Pkg.build("PyCall")
 	```
 - Relaunch Julia and check which python the PyCall is using: `PyCall.pyprogramname` or `PyCall.python`
+
+**Note**: Under this configuration, only running the `spinetoolbox` requires activating the conda environment. Once the `PyCall.jl` is configured to use the conda python, there is no need to activate the conda environment for `julia` related tasks, e.g. updating packages, running `SpineOpt.jl` and `SpineInterface.jl`, etc.
