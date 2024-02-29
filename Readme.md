@@ -96,7 +96,7 @@ When the ipython and ipykernel (maybe only ipykernel needed) packages are instal
 
 ### 1. Build worry-free spinetoolbox in `conda` environment with `git`:
 - prerequisites: 
-	- [miniconda](https://docs.conda.io/en/latest/miniconda.html) or [Anaconda](https://www.anaconda.com/products/distribution)
+	- **python 3.11** from [miniconda](https://docs.conda.io/en/latest/miniconda.html) or [Anaconda](https://www.anaconda.com/products/distribution)
 	- [git](https://git-scm.com/downloads)
 
 ```console
