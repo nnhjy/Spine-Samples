@@ -110,3 +110,32 @@ coda activate spine-tools
     pip install git+https://github.com/spine-tools/spinetoolbox-dev
     ```
     Update package: reinstall the package with the same command.
+
+### 2. Conda environment for spine development
+- prequisites:
+	- **python 3.11** from [miniconda](https://docs.conda.io/en/latest/miniconda.html)
+	- [git](https://git-scm.com/downloads)
+
+- Create a new conda environment:
+
+	```console
+	conda create -n spine-tools python=3.11
+	```
+
+- install the python packages of spine-tools:
+
+	```console
+	coda activate spine-dev
+	pip install -e .\path\to\local\Spine-Database-API
+	pip install -e .\path\to\local\spine-engine
+	pip install -e .\path\to\local\spine-items
+	pip install -e .\path\to\local\Spine-Toolbox
+	```
+
+- Assign the conda python to PyCall.jl:
+	```julia
+	julia> ENV["PYTHON"] = Sys.which("python")
+	julia> ENV["PYCALL_JL_RUNTIME_PYTHON"] = Sys.which("python")
+	julia> import Pkg; Pkg.build("PyCall")
+	```
+- Relaunch Julia and check which python the PyCall is using: `PyCall.pyprogramname` or `PyCall.python`
