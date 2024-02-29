@@ -91,3 +91,22 @@ When the ipython and ipykernel (maybe only ipykernel needed) packages are instal
 		println(available_packages)
 		```
 		When `spinedb_api` package is in the list, it is good to go.
+
+## (Ongoing) New approach to set up Spine working/development environment
+
+### 1. Build worry-free spinetoolbox in `conda` environment with `git`:
+- prerequisites: 
+	- [miniconda](https://docs.conda.io/en/latest/miniconda.html) or [Anaconda](https://www.anaconda.com/products/distribution)
+	- [git](https://git-scm.com/downloads)
+
+```console
+conda create -n spine-tools python=3.11
+coda activate spine-tools
+```
+
+- Install the active dev version `spinetoolbox`:
+    - With `git` installed:
+    ```console
+    pip install git+https://github.com/spine-tools/spinetoolbox-dev
+    ```
+    Update package: reinstall the package with the same command.
