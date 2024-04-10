@@ -1,4 +1,4 @@
-[![DOI](https://zenodo.org/badge/510028817.svg)](https://zenodo.org/badge/latestdoi/510028817)
+[![DOI](https://zenodo.org/badge/510028817.svg)](https://zenodo.org/doi/10.5281/zenodo.7802212)
 
 # Overview
 This repository consists of 3 [Spine-Toolbox](https://github.com/Spine-tools/Spine-Toolbox) projects.
