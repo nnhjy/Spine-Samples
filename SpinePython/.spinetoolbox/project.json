@@ -1,0 +1,177 @@
+{
+    "project": {
+        "version": 11,
+        "description": "",
+        "settings": {
+            "enable_execute_all": true
+        },
+        "specifications": {
+            "Tool": [
+                {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/specifications/Tool/python_script.json"
+                },
+                {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/specifications/Tool/julia_script.json"
+                }
+            ],
+            "Importer": [
+                {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/specifications/Importer/dummy_import_csv.json"
+                },
+                {
+                    "type": "path",
+                    "relative": true,
+                    "path": ".spinetoolbox/specifications/Importer/dummy_import_json.json"
+                }
+            ]
+        },
+        "connections": [
+            {
+                "name": "from Input_files to Python",
+                "from": [
+                    "Input_files",
+                    "right"
+                ],
+                "to": [
+                    "Python",
+                    "left"
+                ]
+            },
+            {
+                "name": "from Input_files to Julia",
+                "from": [
+                    "Input_files",
+                    "right"
+                ],
+                "to": [
+                    "Julia",
+                    "left"
+                ]
+            },
+            {
+                "name": "from Python to ImportJSON",
+                "from": [
+                    "Python",
+                    "right"
+                ],
+                "to": [
+                    "ImportJSON",
+                    "left"
+                ]
+            },
+            {
+                "name": "from Julia to ImportCSV",
+                "from": [
+                    "Julia",
+                    "bottom"
+                ],
+                "to": [
+                    "ImportCSV",
+                    "left"
+                ]
+            },
+            {
+                "name": "from Julia to Python",
+                "from": [
+                    "Julia",
+                    "right"
+                ],
+                "to": [
+                    "Python",
+                    "bottom"
+                ]
+            }
+        ],
+        "jumps": []
+    },
+    "items": {
+        "Python": {
+            "type": "Tool",
+            "description": "",
+            "x": -611.8170723231624,
+            "y": -297.3141244326753,
+            "specification": "Python Script",
+            "execute_in_work": true,
+            "cmd_line_args": [
+                {
+                    "type": "literal",
+                    "arg": "this is the 1st argument"
+                },
+                {
+                    "type": "literal",
+                    "arg": "this is the 2nd argument"
+                }
+            ],
+            "kill_completed_processes": false,
+            "log_process_output": false
+        },
+        "Julia": {
+            "type": "Tool",
+            "description": "",
+            "x": -617.5623934681471,
+            "y": -156.90510322643476,
+            "specification": "Julia Script",
+            "execute_in_work": true,
+            "cmd_line_args": [
+                {
+                    "type": "literal",
+                    "arg": "this is the 1st argument"
+                },
+                {
+                    "type": "literal",
+                    "arg": "this is the 2nd argument"
+                }
+            ],
+            "kill_completed_processes": false,
+            "log_process_output": false
+        },
+        "Input_files": {
+            "type": "Data Connection",
+            "description": "",
+            "x": -788.5487239072106,
+            "y": -232.34024900837454,
+            "file_references": [],
+            "db_references": []
+        },
+        "ImportCSV": {
+            "type": "Importer",
+            "description": "",
+            "x": -418.1612812663043,
+            "y": -136.5541388990754,
+            "specification": "dummy_import_csv",
+            "cancel_on_error": false,
+            "on_conflict": "merge",
+            "file_selection": [
+                [
+                    "julia_output/*.csv",
+                    true
+                ]
+            ]
+        },
+        "ImportJSON": {
+            "type": "Importer",
+            "description": "",
+            "x": -414.38169988611594,
+            "y": -298.7231772964816,
+            "specification": "dummy_import_json",
+            "cancel_on_error": false,
+            "on_conflict": "merge",
+            "file_selection": [
+                [
+                    "*.json",
+                    true
+                ],
+                [
+                    "csv_output/*.csv",
+                    false
+                ]
+            ]
+        }
+    }
+}

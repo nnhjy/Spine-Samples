@@ -1,0 +1,17 @@
+{
+    "name": "Julia Script",
+    "tooltype": "julia",
+    "includes": [
+        "julia_test.jl"
+    ],
+    "description": "",
+    "inputfiles": [
+        "sample_csv.csv"
+    ],
+    "inputfiles_opt": [],
+    "outputfiles": [
+        "julia_output/*.csv"
+    ],
+    "cmdline_args": [],
+    "includes_main_path": "../../.."
+}

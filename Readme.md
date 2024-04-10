@@ -3,14 +3,17 @@
 # Overview
 This repository consists of 3 [Spine-Toolbox](https://github.com/Spine-tools/Spine-Toolbox) projects.
 
-## 1. BuildTimeseries project 
+## 1. Spine Demo
+A project containing several Spine database to illustrate [SpineOpt.jl](https://github.com/Spine-tools/SpineOpt.jl) functionalities (demo `SpineOpt` models) and [SpineInterface.jl](https://github.com/spine-tools/SpineInterface.jl) utilities (incl. improvising Julia JuMP models using `SpineInterface` to interact with SpineDB)
+
+## 2. SpinePython
+A project to demonstrate the workflow of running a `Tool` of Python (script) and data exchange with other tools (`Data Connection`, `Tool` of Julia).
+
+## 3. BuildTimeseries project 
 A demo workflow to attach "DateTime" index to TimeSeries data
 
-## 2. Hydro reservoir example
+## 4. Hydro reservoir example
 A sample [SpineOpt.jl](https://github.com/Spine-tools/SpineOpt.jl) model for hydro reservoir generation
-
-## 3. Spine Demo
-A project containing several Spine database to illustrate [SpineOpt.jl](https://github.com/Spine-tools/SpineOpt.jl) functionalities (demo `SpineOpt` models) and [SpineInterface.jl](https://github.com/spine-tools/SpineInterface.jl) utilities (incl. improvising Julia JuMP models using `SpineInterface` to interact with SpineDB)
 
 
 # Set up work environment for Spine toolkits

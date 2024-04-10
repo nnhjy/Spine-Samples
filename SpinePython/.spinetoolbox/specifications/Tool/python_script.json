@@ -1,0 +1,20 @@
+{
+    "name": "Python Script",
+    "tooltype": "python",
+    "includes": [
+        "python_test.py"
+    ],
+    "description": "",
+    "inputfiles": [
+        "csv_input/sample_csv.csv"
+    ],
+    "inputfiles_opt": [
+        "csv_input/julia_*.csv"
+    ],
+    "outputfiles": [
+        "*.json",
+        "csv_output/*.csv"
+    ],
+    "cmdline_args": [],
+    "includes_main_path": "../../.."
+}

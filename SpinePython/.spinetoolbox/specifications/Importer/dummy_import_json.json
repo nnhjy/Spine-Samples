@@ -1,0 +1,61 @@
+{
+    "name": "dummy_import_json",
+    "item_type": "Importer",
+    "mapping": {
+        "table_mappings": {
+            "python_output": [
+                {
+                    "Mapping 1": {
+                        "mapping": [
+                            {
+                                "map_type": "ObjectClass",
+                                "position": "hidden"
+                            },
+                            {
+                                "map_type": "Object",
+                                "position": "hidden"
+                            },
+                            {
+                                "map_type": "ObjectMetadata",
+                                "position": "hidden"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "python_output.item": [
+                {
+                    "Mapping 1": {
+                        "mapping": [
+                            {
+                                "map_type": "ObjectClass",
+                                "position": "hidden"
+                            },
+                            {
+                                "map_type": "Object",
+                                "position": "hidden"
+                            },
+                            {
+                                "map_type": "ObjectMetadata",
+                                "position": "hidden"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "selected_tables": [
+            "python_output",
+            "python_output.item"
+        ],
+        "table_options": {
+            "python_output": {},
+            "python_output.item": {}
+        },
+        "table_types": {},
+        "table_default_column_type": {},
+        "table_row_types": {},
+        "source_type": "JSONConnector"
+    },
+    "description": ""
+}
