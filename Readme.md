@@ -1,7 +1,7 @@
 [![DOI](https://zenodo.org/badge/510028817.svg)](https://zenodo.org/doi/10.5281/zenodo.7802212)
 
 # Overview
-This repository consists of 3 [Spine-Toolbox](https://github.com/Spine-tools/Spine-Toolbox) projects.
+This repository consists of 4 [Spine-Toolbox](https://github.com/Spine-tools/Spine-Toolbox) projects.
 
 ## 1. Spine Demo
 A project containing several Spine database to illustrate [SpineOpt.jl](https://github.com/Spine-tools/SpineOpt.jl) functionalities (demo `SpineOpt` models) and [SpineInterface.jl](https://github.com/spine-tools/SpineInterface.jl) utilities (incl. improvising Julia JuMP models using `SpineInterface` to interact with SpineDB)
