@@ -7,7 +7,16 @@ This repository consists of 4 [Spine-Toolbox](https://github.com/Spine-tools/Spi
 A project containing several Spine database to illustrate [SpineOpt.jl](https://github.com/Spine-tools/SpineOpt.jl) functionalities (demo `SpineOpt` models) and [SpineInterface.jl](https://github.com/spine-tools/SpineInterface.jl) utilities (incl. improvising Julia JuMP models using `SpineInterface` to interact with SpineDB)
 
 ## 2. SpinePython
-A project to demonstrate the workflow of running a `Tool` of Python (script) and data exchange with other tools (`Data Connection`, `Tool` of Julia).
+A demo project of a workflow to run a Python `Tool` and exchange data with other tools: `Data Connection`, Julia `Tool`, and `Importer` for JSON and CSV files.
+![image](https://github.com/nnhjy/Spine-Samples/assets/43530784/fd941256-548d-4d91-904e-30204d82433a)
+The project workflow contains:
+
+1. A dummy input CSV file in the "Input_files" `Data Connection`;
+
+2. A Julia script wrapped in the "Julia" `Tool` that reads the given input CSV and writes to an output CSV file; the output CSV file is passed over to the "ImportCSV" `Importer` and other tools (see 3);
+
+3. A Python script wrapped in the "Python" `Tool` that reads the given input CSV and the output csv from the Julia script and writes to a JSON file and another CSV file; the JSON output file is passed to the "ImportJSON" `Importer`. 
+
 
 ## 3. BuildTimeseries project 
 A demo workflow to attach "DateTime" index to TimeSeries data
@@ -15,8 +24,7 @@ A demo workflow to attach "DateTime" index to TimeSeries data
 ## 4. Hydro reservoir example
 A sample [SpineOpt.jl](https://github.com/Spine-tools/SpineOpt.jl) model for hydro reservoir generation
 
-
-# Set up work environment for Spine toolkits
+# Set up working environment for Spine toolkits
 
 ## Python (virtual) environment setup
 1. Download and install python interpreter
