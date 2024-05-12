@@ -1,13 +1,13 @@
 using SpineInterface
 using JuMP
-using Clp
+using HiGHS
 using Plots
 
 db_url = ARGS[1]
 
 using_spinedb(db_url)
 
-optimizer = optimizer_with_attributes(Clp.Optimizer)
+optimizer = optimizer_with_attributes(HiGHS.Optimizer)
 m = Model(optimizer)
 
 @variable(m, flow[(u, n) in unit__node()])

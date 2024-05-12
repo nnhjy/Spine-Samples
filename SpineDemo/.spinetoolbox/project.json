@@ -1,7 +1,10 @@
 {
     "project": {
-        "version": 11,
+        "version": 13,
         "description": "A demonstration on Spine toolkits.",
+        "settings": {
+            "enable_execute_all": true
+        },
         "specifications": {
             "Tool": [
                 {
@@ -36,7 +39,22 @@
                 "to": [
                     "SpineFormat Julia JuMP Model 1",
                     "left"
-                ]
+                ],
+                "filter_settings": {
+                    "known_filters": {
+                        "db_url@SpineFormatDB 1": {
+                            "scenario_filter": {},
+                            "alternative_filter": {
+                                "Base": true
+                            }
+                        }
+                    },
+                    "auto_online": true,
+                    "enabled_filter_types": {
+                        "alternative_filter": false,
+                        "scenario_filter": true
+                    }
+                }
             },
             {
                 "name": "from SpineOpt demo DB - operating reserves to Run SpineOpt - reserves demo",
@@ -55,12 +73,17 @@
                                 "reserve": true,
                                 "reserve_with_investment": true
                             },
-                            "tool_filter": {
-                                "object_activity_control": true
+                            "alternative_filter": {
+                                "Base": true,
+                                "investment": true
                             }
                         }
                     },
-                    "auto_online": true
+                    "auto_online": true,
+                    "enabled_filter_types": {
+                        "alternative_filter": false,
+                        "scenario_filter": true
+                    }
                 }
             },
             {
@@ -72,7 +95,35 @@
                 "to": [
                     "Output DB",
                     "left"
-                ]
+                ],
+                "options": {
+                    "purge_before_writing": true,
+                    "purge_settings": {
+                        "alternative": true,
+                        "scenario": true,
+                        "scenario_alternative": true,
+                        "entity_class": true,
+                        "superclass_subclass": true,
+                        "entity": true,
+                        "entity_group": true,
+                        "entity_alternative": true,
+                        "parameter_value_list": true,
+                        "list_value": true,
+                        "parameter_definition": true,
+                        "parameter_value": true,
+                        "metadata": true,
+                        "entity_metadata": true,
+                        "parameter_value_metadata": true
+                    }
+                },
+                "filter_settings": {
+                    "known_filters": {},
+                    "auto_online": true,
+                    "enabled_filter_types": {
+                        "alternative_filter": false,
+                        "scenario_filter": true
+                    }
+                }
             },
             {
                 "name": "from Load SpineOpt template to SpineOpt demo DB - operating reserves",
@@ -83,7 +134,15 @@
                 "to": [
                     "SpineOpt demo DB - operating reserves",
                     "left"
-                ]
+                ],
+                "filter_settings": {
+                    "known_filters": {},
+                    "auto_online": true,
+                    "enabled_filter_types": {
+                        "alternative_filter": false,
+                        "scenario_filter": true
+                    }
+                }
             },
             {
                 "name": "from SpineFormatDB 2 to SpineFormat Julia JuMP Model 2",
@@ -94,7 +153,22 @@
                 "to": [
                     "SpineFormat Julia JuMP Model 2",
                     "left"
-                ]
+                ],
+                "filter_settings": {
+                    "known_filters": {
+                        "db_url@SpineFormatDB 2": {
+                            "scenario_filter": {},
+                            "alternative_filter": {
+                                "Base": true
+                            }
+                        }
+                    },
+                    "auto_online": true,
+                    "enabled_filter_types": {
+                        "alternative_filter": false,
+                        "scenario_filter": true
+                    }
+                }
             },
             {
                 "name": "from Load SpineOpt template to SpineOpt demo DB - simple reserves",
@@ -105,7 +179,15 @@
                 "to": [
                     "SpineOpt demo DB - simple reserves",
                     "left"
-                ]
+                ],
+                "filter_settings": {
+                    "known_filters": {},
+                    "auto_online": true,
+                    "enabled_filter_types": {
+                        "alternative_filter": false,
+                        "scenario_filter": true
+                    }
+                }
             },
             {
                 "name": "from Load SpineOpt template to SpineOpt demo DB - unit investment",
@@ -116,7 +198,15 @@
                 "to": [
                     "SpineOpt demo DB - unit investment",
                     "left"
-                ]
+                ],
+                "filter_settings": {
+                    "known_filters": {},
+                    "auto_online": true,
+                    "enabled_filter_types": {
+                        "alternative_filter": false,
+                        "scenario_filter": true
+                    }
+                }
             },
             {
                 "name": "from SpineOpt demo DB - simple reserves to Run SpineOpt - simple reserves",
@@ -132,12 +222,16 @@
                     "known_filters": {
                         "db_url@SpineOpt demo DB - simple reserves": {
                             "scenario_filter": {},
-                            "tool_filter": {
-                                "object_activity_control": true
+                            "alternative_filter": {
+                                "Base": true
                             }
                         }
                     },
-                    "auto_online": true
+                    "auto_online": true,
+                    "enabled_filter_types": {
+                        "alternative_filter": false,
+                        "scenario_filter": true
+                    }
                 }
             },
             {
@@ -154,12 +248,16 @@
                     "known_filters": {
                         "db_url@SpineOpt demo DB - rolling horizon": {
                             "scenario_filter": {},
-                            "tool_filter": {
-                                "object_activity_control": true
+                            "alternative_filter": {
+                                "Base": true
                             }
                         }
                     },
-                    "auto_online": true
+                    "auto_online": true,
+                    "enabled_filter_types": {
+                        "alternative_filter": false,
+                        "scenario_filter": true
+                    }
                 }
             },
             {
@@ -179,12 +277,17 @@
                                 "Asynchro_Operation_Investment": true,
                                 "Synchro_Operation_Investment": true
                             },
-                            "tool_filter": {
-                                "object_activity_control": true
+                            "alternative_filter": {
+                                "Base": true,
+                                "LateInvestment": true
                             }
                         }
                     },
-                    "auto_online": true
+                    "auto_online": true,
+                    "enabled_filter_types": {
+                        "alternative_filter": false,
+                        "scenario_filter": true
+                    }
                 }
             },
             {
@@ -196,7 +299,35 @@
                 "to": [
                     "Output DB",
                     "left"
-                ]
+                ],
+                "options": {
+                    "purge_before_writing": true,
+                    "purge_settings": {
+                        "alternative": true,
+                        "scenario": true,
+                        "scenario_alternative": true,
+                        "entity_class": true,
+                        "superclass_subclass": true,
+                        "entity": true,
+                        "entity_group": true,
+                        "entity_alternative": true,
+                        "parameter_value_list": true,
+                        "list_value": true,
+                        "parameter_definition": true,
+                        "parameter_value": true,
+                        "metadata": true,
+                        "entity_metadata": true,
+                        "parameter_value_metadata": true
+                    }
+                },
+                "filter_settings": {
+                    "known_filters": {},
+                    "auto_online": true,
+                    "enabled_filter_types": {
+                        "alternative_filter": false,
+                        "scenario_filter": true
+                    }
+                }
             },
             {
                 "name": "from Run SpineOpt - rolling horizon to Output DB",
@@ -207,7 +338,35 @@
                 "to": [
                     "Output DB",
                     "left"
-                ]
+                ],
+                "options": {
+                    "purge_before_writing": true,
+                    "purge_settings": {
+                        "alternative": true,
+                        "scenario": true,
+                        "scenario_alternative": true,
+                        "entity_class": true,
+                        "superclass_subclass": true,
+                        "entity": true,
+                        "entity_group": true,
+                        "entity_alternative": true,
+                        "parameter_value_list": true,
+                        "list_value": true,
+                        "parameter_definition": true,
+                        "parameter_value": true,
+                        "metadata": true,
+                        "entity_metadata": true,
+                        "parameter_value_metadata": true
+                    }
+                },
+                "filter_settings": {
+                    "known_filters": {},
+                    "auto_online": true,
+                    "enabled_filter_types": {
+                        "alternative_filter": false,
+                        "scenario_filter": true
+                    }
+                }
             },
             {
                 "name": "from Run SpineOpt - unit investment to Output DB",
@@ -218,7 +377,35 @@
                 "to": [
                     "Output DB",
                     "left"
-                ]
+                ],
+                "options": {
+                    "purge_before_writing": true,
+                    "purge_settings": {
+                        "alternative": true,
+                        "scenario": true,
+                        "scenario_alternative": true,
+                        "entity_class": true,
+                        "superclass_subclass": true,
+                        "entity": true,
+                        "entity_group": true,
+                        "entity_alternative": true,
+                        "parameter_value_list": true,
+                        "list_value": true,
+                        "parameter_definition": true,
+                        "parameter_value": true,
+                        "metadata": true,
+                        "entity_metadata": true,
+                        "parameter_value_metadata": true
+                    }
+                },
+                "filter_settings": {
+                    "known_filters": {},
+                    "auto_online": true,
+                    "enabled_filter_types": {
+                        "alternative_filter": false,
+                        "scenario_filter": true
+                    }
+                }
             },
             {
                 "name": "from Run SpineOpt - piecewise unit flow to Output DB",
@@ -229,7 +416,35 @@
                 "to": [
                     "Output DB",
                     "bottom"
-                ]
+                ],
+                "options": {
+                    "purge_before_writing": true,
+                    "purge_settings": {
+                        "alternative": true,
+                        "scenario": true,
+                        "scenario_alternative": true,
+                        "entity_class": true,
+                        "superclass_subclass": true,
+                        "entity": true,
+                        "entity_group": true,
+                        "entity_alternative": true,
+                        "parameter_value_list": true,
+                        "list_value": true,
+                        "parameter_definition": true,
+                        "parameter_value": true,
+                        "metadata": true,
+                        "entity_metadata": true,
+                        "parameter_value_metadata": true
+                    }
+                },
+                "filter_settings": {
+                    "known_filters": {},
+                    "auto_online": true,
+                    "enabled_filter_types": {
+                        "alternative_filter": false,
+                        "scenario_filter": true
+                    }
+                }
             },
             {
                 "name": "from Load SpineOpt template to SpineOpt demo DB - piecewise unit flow",
@@ -240,7 +455,15 @@
                 "to": [
                     "SpineOpt demo DB - piecewise unit flow",
                     "left"
-                ]
+                ],
+                "filter_settings": {
+                    "known_filters": {},
+                    "auto_online": true,
+                    "enabled_filter_types": {
+                        "alternative_filter": false,
+                        "scenario_filter": true
+                    }
+                }
             },
             {
                 "name": "from SpineOpt demo DB - aggregated demand to Run SpineOpt - aggregated demand",
@@ -256,12 +479,16 @@
                     "known_filters": {
                         "db_url@SpineOpt demo DB - aggregated demand": {
                             "scenario_filter": {},
-                            "tool_filter": {
-                                "object_activity_control": true
+                            "alternative_filter": {
+                                "Base": true
                             }
                         }
                     },
-                    "auto_online": true
+                    "auto_online": true,
+                    "enabled_filter_types": {
+                        "alternative_filter": false,
+                        "scenario_filter": true
+                    }
                 }
             },
             {
@@ -273,7 +500,15 @@
                 "to": [
                     "SpineOpt demo DB - aggregated demand",
                     "left"
-                ]
+                ],
+                "filter_settings": {
+                    "known_filters": {},
+                    "auto_online": true,
+                    "enabled_filter_types": {
+                        "alternative_filter": false,
+                        "scenario_filter": true
+                    }
+                }
             },
             {
                 "name": "from Run SpineOpt - aggregated demand to Output DB",
@@ -284,7 +519,35 @@
                 "to": [
                     "Output DB",
                     "bottom"
-                ]
+                ],
+                "options": {
+                    "purge_before_writing": true,
+                    "purge_settings": {
+                        "alternative": true,
+                        "scenario": true,
+                        "scenario_alternative": true,
+                        "entity_class": true,
+                        "superclass_subclass": true,
+                        "entity": true,
+                        "entity_group": true,
+                        "entity_alternative": true,
+                        "parameter_value_list": true,
+                        "list_value": true,
+                        "parameter_definition": true,
+                        "parameter_value": true,
+                        "metadata": true,
+                        "entity_metadata": true,
+                        "parameter_value_metadata": true
+                    }
+                },
+                "filter_settings": {
+                    "known_filters": {},
+                    "auto_online": true,
+                    "enabled_filter_types": {
+                        "alternative_filter": false,
+                        "scenario_filter": true
+                    }
+                }
             },
             {
                 "name": "from Load SpineOpt template to SpineOpt demo DB - rolling horizon",
@@ -295,7 +558,15 @@
                 "to": [
                     "SpineOpt demo DB - rolling horizon",
                     "left"
-                ]
+                ],
+                "filter_settings": {
+                    "known_filters": {},
+                    "auto_online": true,
+                    "enabled_filter_types": {
+                        "alternative_filter": false,
+                        "scenario_filter": true
+                    }
+                }
             },
             {
                 "name": "from SpineOpt demo DB - piecewise unit flow to Run SpineOpt - piecewise unit flow",
@@ -317,19 +588,24 @@
                                 "WithSourceFuelCost_EffUp": true,
                                 "WithSourceFuelCost_EffUp_MILP": true
                             },
-                            "tool_filter": {
-                                "object_activity_control": true
+                            "alternative_filter": {
+                                "Base": true,
+                                "EfficiencyDecreasing": true,
+                                "EfficiencyIncreasing": true,
+                                "IntUnitsOn": true,
+                                "SourceFlowFuelCost": true
                             }
                         }
                     },
-                    "auto_online": true
+                    "auto_online": true,
+                    "enabled_filter_types": {
+                        "alternative_filter": false,
+                        "scenario_filter": true
+                    }
                 }
             }
         ],
-        "jumps": [],
-        "settings": {
-            "enable_execute_all": true
-        }
+        "jumps": []
     },
     "items": {
         "Load SpineOpt template": {
@@ -369,7 +645,8 @@
                     "arg": "db_url@SpineOpt demo DB - rolling horizon"
                 }
             ],
-            "kill_completed_processes": false
+            "kill_completed_processes": false,
+            "log_process_output": false
         },
         "Output DB": {
             "type": "Data Store",
@@ -384,7 +661,8 @@
                     "type": "path",
                     "relative": true,
                     "path": ".spinetoolbox/items/output_db/Output DB.sqlite"
-                }
+                },
+                "schema": ""
             }
         },
         "SpineFormatDB 1": {
@@ -400,7 +678,8 @@
                     "type": "path",
                     "relative": true,
                     "path": ".spinetoolbox/items/spineformatdb_1/Data Store 1.sqlite"
-                }
+                },
+                "schema": ""
             }
         },
         "SpineFormatDB 2": {
@@ -416,7 +695,8 @@
                     "type": "path",
                     "relative": true,
                     "path": ".spinetoolbox/items/spineformatdb_2/Data Store.sqlite"
-                }
+                },
+                "schema": ""
             }
         },
         "SpineFormat Julia JuMP Model 2": {
@@ -432,7 +712,8 @@
                     "arg": "db_url@SpineFormatDB 2"
                 }
             ],
-            "kill_completed_processes": false
+            "kill_completed_processes": false,
+            "log_process_output": false
         },
         "SpineFormat Julia JuMP Model 1": {
             "type": "Tool",
@@ -447,7 +728,8 @@
                     "arg": "db_url@SpineFormatDB 1"
                 }
             ],
-            "kill_completed_processes": false
+            "kill_completed_processes": false,
+            "log_process_output": false
         },
         "SpineOpt demo DB - rolling horizon": {
             "type": "Data Store",
@@ -462,7 +744,8 @@
                     "type": "path",
                     "relative": true,
                     "path": ".spinetoolbox/items/spineopt_demo_db_-_rolling_horizon/SpineOptDB_rolling.sqlite"
-                }
+                },
+                "schema": ""
             }
         },
         "SpineOpt demo DB - operating reserves": {
@@ -478,7 +761,8 @@
                     "type": "path",
                     "relative": true,
                     "path": ".spinetoolbox/items/spineopt_demo_db_-_operating_reserves/SpineOptDB_reserves.sqlite"
-                }
+                },
+                "schema": ""
             }
         },
         "Run SpineOpt - reserves demo": {
@@ -498,7 +782,8 @@
                     "arg": "db_url@Output DB"
                 }
             ],
-            "kill_completed_processes": false
+            "kill_completed_processes": false,
+            "log_process_output": false
         },
         "SpineOpt demo DB - simple reserves": {
             "type": "Data Store",
@@ -513,7 +798,8 @@
                     "type": "path",
                     "relative": true,
                     "path": ".spinetoolbox/items/spineopt_demo_db_-_simple_reserves/SpineOptDB_simple-reserves.sqlite"
-                }
+                },
+                "schema": ""
             }
         },
         "SpineOpt demo DB - unit investment": {
@@ -529,7 +815,8 @@
                     "type": "path",
                     "relative": true,
                     "path": ".spinetoolbox/items/spineopt_demo_db_-_unit_investment/SpineOptDB_unit-investment.sqlite"
-                }
+                },
+                "schema": ""
             }
         },
         "Run_SpineOpt_Gurobi_sample": {
@@ -540,7 +827,8 @@
             "specification": "Run_SpineOpt_Gurobi",
             "execute_in_work": true,
             "cmd_line_args": [],
-            "kill_completed_processes": false
+            "kill_completed_processes": false,
+            "log_process_output": false
         },
         "Run SpineOpt - simple reserves": {
             "type": "Tool",
@@ -559,7 +847,8 @@
                     "arg": "db_url@Output DB"
                 }
             ],
-            "kill_completed_processes": false
+            "kill_completed_processes": false,
+            "log_process_output": false
         },
         "Run SpineOpt - rolling horizon": {
             "type": "Tool",
@@ -578,7 +867,8 @@
                     "arg": "db_url@Output DB"
                 }
             ],
-            "kill_completed_processes": false
+            "kill_completed_processes": false,
+            "log_process_output": false
         },
         "Run SpineOpt - unit investment": {
             "type": "Tool",
@@ -597,13 +887,14 @@
                     "arg": "db_url@Output DB"
                 }
             ],
-            "kill_completed_processes": false
+            "kill_completed_processes": false,
+            "log_process_output": false
         },
         "SpineOpt demo DB - piecewise unit flow": {
             "type": "Data Store",
             "description": "Piecewise linear unit flow conversion with user constraints",
-            "x": -388.4595387536534,
-            "y": 136.34416749542177,
+            "x": -387.5937336529896,
+            "y": 136.3441674954218,
             "url": {
                 "dialect": "sqlite",
                 "host": "",
@@ -612,7 +903,8 @@
                     "type": "path",
                     "relative": true,
                     "path": ".spinetoolbox/items/spineopt_demo_db_-_piecewise_unit_flow/SpineOpt demo DB - piecewise unit flow.sqlite"
-                }
+                },
+                "schema": ""
             }
         },
         "Run SpineOpt - piecewise unit flow": {
@@ -632,7 +924,8 @@
                     "arg": "db_url@Output DB"
                 }
             ],
-            "kill_completed_processes": false
+            "kill_completed_processes": false,
+            "log_process_output": false
         },
         "SpineOpt demo DB - aggregated demand": {
             "type": "Data Store",
@@ -647,7 +940,8 @@
                     "type": "path",
                     "relative": true,
                     "path": ".spinetoolbox/items/spineopt_demo_db_-_aggregated_demand/SpineOptDB_aggregated-demand.sqlite"
-                }
+                },
+                "schema": ""
             }
         },
         "Run SpineOpt - aggregated demand": {
@@ -667,7 +961,8 @@
                     "arg": "db_url@Output DB"
                 }
             ],
-            "kill_completed_processes": false
+            "kill_completed_processes": false,
+            "log_process_output": false
         }
     }
 }
