@@ -139,7 +139,7 @@ When the ipython and ipykernel (maybe only ipykernel needed) packages are instal
 - install the python packages of spine-tools:
 
 	```console
-	coda activate spine-dev
+	conda activate spine-dev
 	pip install -e .\path\to\local\Spine-Database-API
 	pip install -e .\path\to\local\spine-engine
 	pip install -e .\path\to\local\spine-items
