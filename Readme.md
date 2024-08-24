@@ -77,7 +77,7 @@ When the ipython and ipykernel (maybe only ipykernel needed) packages are instal
 		julia> import Pkg; Pkg.build("PyCall")
 		```
 	
-	- ***Option 3 (recommended)*** For a dedicated virtual environment created by `venv` and `virtualenv`, PyCall could work provided that the Python executable used in the virtual environment is linked against the same libpython used by PyCall (`conda` environment not supported). See the explanation [here](https://github.com/JuliaPy/PyCall.jl#python-virtual-environments).
+	- ***Option 3*** For a dedicated virtual environment created by `venv` and `virtualenv`, PyCall could work provided that the Python executable used in the virtual environment is linked against the same libpython used by PyCall (`conda` environment not supported). See the explanation [here](https://github.com/JuliaPy/PyCall.jl#python-virtual-environments).
 		- In command line: `virtual_env_folder\Scripts\Activate.ps1`
 		- In Julia after activating the desired working environment:
 		```julia
@@ -102,20 +102,26 @@ When the ipython and ipykernel (maybe only ipykernel needed) packages are instal
 		```
 		When `spinedb_api` package is in the list, it is good to go.
 
-## (WIP) New approach to set up Spine working/development environment
+## (Recommanded) New approach to set up Spine working/development environment
 
 **Warning!!!**: Under this configuration, only running the `spinetoolbox` requires activating the conda environment. Once the `PyCall.jl` is configured to use the conda python, there is no need to activate the conda environment for `julia` related tasks, e.g. ***updating environment packages (doing this with the conda activated causes unnecessary error)***.
 
+**Note** When the `Python` version has a major change (e.g. 3.1x to 3.1y), its `conda` environment needs recreating with deleting the old environment first:
+
+	```console
+	conda remove -n env_name --all
+	```
+
 ### Step 1 option 1. Build worry-free spinetoolbox in `conda` environment with `git`:
 - prerequisites: 
-	- **python 3.11** from [miniconda](https://docs.conda.io/en/latest/miniconda.html) or [Anaconda](https://www.anaconda.com/products/distribution)
+	- **python 3.12** from [miniconda](https://docs.conda.io/en/latest/miniconda.html) or [Anaconda](https://www.anaconda.com/products/distribution)
 	- [git](https://git-scm.com/downloads)
 
 - In OS terminal (cmd or PowerShell):
 
 	```console
-	conda create -n spine-tools python=3.11
-	coda activate spine-tools
+	conda create -n spine-tools python=3.12
+	conda activate spine-tools
 	```
 
 - Install the active dev version `spinetoolbox` (need `git` installed):
@@ -127,13 +133,13 @@ When the ipython and ipykernel (maybe only ipykernel needed) packages are instal
 
 ### Step 1 option 2. Conda environment for spine development
 - prequisites:
-	- **python 3.11** from [miniconda](https://docs.conda.io/en/latest/miniconda.html)
+	- **python 3.12** from [miniconda](https://docs.conda.io/en/latest/miniconda.html)
 	- [git](https://git-scm.com/downloads)
 
 - Create a new conda virtual environment:
 
 	```console
-	conda create -n spine-dev python=3.11
+	conda create -n spine-dev python=3.12
 	```
 
 - install the python packages of spine-tools:
@@ -160,7 +166,6 @@ This step is required for both options (the `spine-dev` and `spine-tools` conda 
 	cd path\to\the\working\julia\enviroment
 	```
 
-
 - In Julia console
 	
 	```julia
@@ -174,5 +179,5 @@ This step is required for both options (the `spine-dev` and `spine-tools` conda 
 	# ENV["PYTHON"] = ENV["CONDA_PREFIX"] * "\\python.exe"
 	using Pkg; Pkg.build("PyCall")
 	```
-- Relaunch Julia and check which python the PyCall is using: `PyCall.pyprogramname` or `PyCall.python`
+- Relaunch Julia and check which `Python` is being used by `PyCall`: `PyCall.pyprogramname` or `PyCall.python`
 
