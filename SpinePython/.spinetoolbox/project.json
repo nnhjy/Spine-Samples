@@ -41,7 +41,15 @@
                 "to": [
                     "Python",
                     "left"
-                ]
+                ],
+                "filter_settings": {
+                    "known_filters": {},
+                    "auto_online": true,
+                    "enabled_filter_types": {
+                        "alternative_filter": false,
+                        "scenario_filter": true
+                    }
+                }
             },
             {
                 "name": "from Input_files to Julia",
@@ -52,7 +60,15 @@
                 "to": [
                     "Julia",
                     "left"
-                ]
+                ],
+                "filter_settings": {
+                    "known_filters": {},
+                    "auto_online": true,
+                    "enabled_filter_types": {
+                        "alternative_filter": false,
+                        "scenario_filter": true
+                    }
+                }
             },
             {
                 "name": "from Python to ImportJSON",
@@ -63,7 +79,15 @@
                 "to": [
                     "ImportJSON",
                     "left"
-                ]
+                ],
+                "filter_settings": {
+                    "known_filters": {},
+                    "auto_online": true,
+                    "enabled_filter_types": {
+                        "alternative_filter": false,
+                        "scenario_filter": true
+                    }
+                }
             },
             {
                 "name": "from Julia to ImportCSV",
@@ -74,7 +98,15 @@
                 "to": [
                     "ImportCSV",
                     "left"
-                ]
+                ],
+                "filter_settings": {
+                    "known_filters": {},
+                    "auto_online": true,
+                    "enabled_filter_types": {
+                        "alternative_filter": false,
+                        "scenario_filter": true
+                    }
+                }
             },
             {
                 "name": "from Julia to Python",
@@ -85,7 +117,15 @@
                 "to": [
                     "Python",
                     "bottom"
-                ]
+                ],
+                "filter_settings": {
+                    "known_filters": {},
+                    "auto_online": true,
+                    "enabled_filter_types": {
+                        "alternative_filter": false,
+                        "scenario_filter": true
+                    }
+                }
             }
         ],
         "jumps": []
@@ -97,7 +137,7 @@
             "x": -611.8170723231624,
             "y": -297.3141244326753,
             "specification": "Python Script",
-            "execute_in_work": true,
+            "execute_in_work": false,
             "cmd_line_args": [
                 {
                     "type": "literal",
@@ -117,7 +157,7 @@
             "x": -617.5623934681471,
             "y": -156.90510322643476,
             "specification": "Julia Script",
-            "execute_in_work": true,
+            "execute_in_work": false,
             "cmd_line_args": [
                 {
                     "type": "literal",
