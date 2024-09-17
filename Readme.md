@@ -8,7 +8,7 @@ A project containing several Spine database to illustrate [SpineOpt.jl](https://
 
 ## 2. SpinePython
 A demo project of a workflow to run a Python `Tool` and exchange data with other tools: `Data Connection`, Julia `Tool`, and `Importer` for JSON and CSV files.
-![image](https://github.com/nnhjy/Spine-Samples/assets/43530784/fd941256-548d-4d91-904e-30204d82433a)
+![image](https://github.com/user-attachments/assets/f82f4a4b-934f-4169-9358-7554221cfc7f)
 The project workflow contains:
 
 1. A dummy input CSV file in the "Input_files" `Data Connection`;
