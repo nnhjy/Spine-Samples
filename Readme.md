@@ -118,7 +118,7 @@ When the ipython and ipykernel (maybe only ipykernel needed) packages are instal
 
 ### Step 1 option 1. Build worry-free spinetoolbox in `conda` environment with `git`:
 - prerequisites: 
-	- **python 3.13** from [miniconda](https://docs.conda.io/en/latest/miniconda.html) or [Anaconda](https://www.anaconda.com/products/distribution)
+	- **python 3.13** from [miniconda](https://repo.anaconda.com/miniconda/)
 	- [git](https://git-scm.com/downloads)
 
 - In OS terminal (cmd or PowerShell):
@@ -133,6 +133,7 @@ When the ipython and ipykernel (maybe only ipykernel needed) packages are instal
     ```console
     pip install git+https://github.com/spine-tools/spinetoolbox-dev
     ```
+
 - Update package to the latest commit: reinstall the package using the same command.
 
 ### Step 1 option 2. Conda environment for spine development
