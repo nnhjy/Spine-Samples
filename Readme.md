@@ -147,7 +147,7 @@ When the ipython and ipykernel (maybe only ipykernel needed) packages are instal
 	conda create -n spine-dev python=3.13
 	```
 
-- install the python packages of spine-tools:
+- install local spine packages in the development environment `spine-dev`:
 
 	```console
 	conda activate spine-dev
