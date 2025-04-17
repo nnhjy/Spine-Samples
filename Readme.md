@@ -136,6 +136,13 @@ When the ipython and ipykernel (maybe only ipykernel needed) packages are instal
 
 - Update package to the latest commit: reinstall the package using the same command.
 
+- Install the official release version `spinetoolbox` (no `git` needed):
+
+	```console
+	pip install spinetoolbox==x.y.z
+	```
+	Note: if the version `x.y.z` is not specified, the latest release version will be installed.
+
 ### Step 1 option 2. Conda environment for spine development
 - prequisites:
 	- **python 3.13** from [miniconda](https://docs.conda.io/en/latest/miniconda.html)
