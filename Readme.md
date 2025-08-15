@@ -26,7 +26,7 @@ A sample [SpineOpt.jl](https://github.com/Spine-tools/SpineOpt.jl) model for hyd
 
 # Set up working environment for Spine toolkits
 
-## 1. Recommanded approach to set up Python working/development environment for Spine
+## Set up working/development environment for SpineOpt and Spine Toolbox
 
 - prerequisites: 
 	- **python 3.13** from [miniconda](https://repo.anaconda.com/miniconda/)
@@ -46,7 +46,10 @@ A sample [SpineOpt.jl](https://github.com/Spine-tools/SpineOpt.jl) model for hyd
 - In OS terminal (cmd or PowerShell):
 
 	```console
-	conda create -n spine-tools python=3.1x
+	# create the env with the latest available python, 
+	# replace the `python` by `python=3.1x` for a specific version
+	# more packages, e.g. `pip`, can be explicitly added before/after the `python`
+	conda create -n spine-tools python  
 	conda init # if the activation has no response
 	conda activate spine-tools
 	```
@@ -71,7 +74,10 @@ A sample [SpineOpt.jl](https://github.com/Spine-tools/SpineOpt.jl) model for hyd
 - Create a new conda virtual environment:
 
 	```console
-	conda create -n spine-dev pip python=3.1x
+	# create the env with the latest available python, 
+	# replace the `python` by `python=3.1x` for a specific version
+	# more packages, e.g. `pip`, can be explicitly added before/after the `python`
+	conda create -n spine-dev python
 	```
 
 - install local spine packages in the development environment `spine-dev`:
@@ -133,7 +139,15 @@ Both options above (the `spine-dev` and `spine-tools` conda env) require this st
 	```
 - Relaunch Julia and check which `Python` is being used by `PyCall`: `PyCall.pyprogramname` or `PyCall.python`
 
-## 2. Python (virtual) environment setup
+- (Optional) To enable `Julia` cells in Jupyter notebooks: 
+	```julia
+	using Pkg; Pkg.update(); Pkg.build("IJulia")
+	```
+
+## (Deprecated) env configuration
+
+### Python (virtual) environment setup
+
 1. Download and install python interpreter
 2. Create a virtual environment: "`X:\path\to\python\interpretor -m venv Y:\path\to\virtual_env_folder`"
 3. In the Terminal, switch to the corresponding virtual environment
@@ -143,7 +157,8 @@ Both options above (the `spine-dev` and `spine-tools` conda env) require this st
 	- Run "`pip install -e package`" in terminal under the activated virtual environment (the "`-e`" option is only needed for installing editable package, see [pip install options](https://pip.pypa.io/en/stable/cli/pip_install/#options))
 When the ipython and ipykernel (maybe only ipykernel needed) packages are installed, command "`pip install -e local\package`" can be used in the Python console where the new virtual environment is launched. 
 
-## 3. Julia environment setup
+### Julia environment setup
+
 1. Install julia manually by the installer from [julialang.org](https://julialang.org/downloads/)
 
 2. Modify the environment variable "julia" to the latest Julia installed
