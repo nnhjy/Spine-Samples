@@ -85,21 +85,29 @@ A sample [SpineOpt.jl](https://github.com/Spine-tools/SpineOpt.jl) model for hyd
 	```console (Win PowerShell/cmd)
 	conda init # if the activation has no response
 	conda activate spine-dev
-	
+	```
 	# option 1
-	$parentDir = ".\path\to\local\packages\"
-	$packageNames = @(
-		"Spine-Database-API",
-		"spine-engine",
-		"spine-items",
-		"Spine-Toolbox"
+    ```console (Win PowerShell/cmd)
+    Step 1:
+    $parentDir = ".\path\to\local\packages\"
+	
+    Step 2:
+    $packageNames = @(
+    	"Spine-Database-API",
+    	"spine-engine",
+    	"spine-items",
+    	"Spine-Toolbox"
 	)
-	foreach ($pkg in $packageNames) {
+	
+    Step 3:
+    foreach ($pkg in $packageNames) {
     $fullPath = Join-Path -Path $parentDir -ChildPath $pkg
 		python -m pip install -e "$fullPath"
 	}
+    ```    
 
 	# option 2
+    ```console (Win PowerShell/cmd)
 	python -m pip install -e .\path\to\local\Spine-Database-API 
 	python -m pip install -e .\path\to\local\spine-engine 
 	python -m pip install -e .\path\to\local\spine-items 
