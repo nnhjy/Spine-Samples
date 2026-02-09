@@ -54,6 +54,11 @@ A sample [SpineOpt.jl](https://github.com/Spine-tools/SpineOpt.jl) model for hyd
 	conda activate spine-tools
 	```
 
+    - *Note*: upgrade `conda` itself:
+    ```console
+    conda update -n base conda
+    ``` 
+
 - Install the active dev version `spinetoolbox` (need `Git` installed):
 
     ```console
